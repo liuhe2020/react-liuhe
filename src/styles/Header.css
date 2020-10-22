@@ -1,0 +1,52 @@
+.header {
+  width: 100%;
+  position: fixed;
+  z-index: 4;
+  mix-blend-mode: difference;
+}
+
+.header-container {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 150px;
+}
+
+.logo {
+  width: 150px;
+  text-decoration: none;
+}
+
+.logo-left {
+  color: #fff;
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+.logo-right {
+  color: #61dbfb;
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+.nav-toggle {
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+.nav-close {
+  display: none;
+  margin-right: -4px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+@media screen and (max-width: 1024px) {
+  .header-container {
+    height: 80px;
+    margin: 0 25px;
+  }
+}

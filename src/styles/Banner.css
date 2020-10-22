@@ -1,0 +1,53 @@
+.banner {
+  background: #fff;
+}
+
+.slogan {
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 200px 200px 200px;
+}
+
+.slogan h1 {
+  font-size: 4rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  line-height: 4rem;
+}
+
+.slogan h3 {
+  font-size: 2rem;
+  line-height: 2rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .slogan {
+    margin: 150px 100px;
+  }
+  .slogan h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+
+  .slogan h3 {
+    font-size: 1.6rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .slogan {
+    margin: 120px 50px;
+  }
+  .slogan h1 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+
+  .slogan h3 {
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+  }
+}
