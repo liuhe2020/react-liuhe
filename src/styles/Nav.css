@@ -1,71 +1,123 @@
 .nav {
-  height: 400px;
-  top: -400px;
+  height: 40vh;
+  top: -40vh;
   width: 100%;
   position: fixed;
-  z-index: 3;
-  background: #fbfdf0;
+  z-index: 4;
+  background: #03010e;
 }
 
-.nav-row {
+.nav-container {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  transform: translateY(115px);
-  padding: 0 200px;
+  flex-direction: column;
+  padding: 7rem 20vw;
 }
 
 .nav-links {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   list-style: none;
+  margin-bottom: 2rem;
 }
 
-.nav-links li {
-  margin-bottom: 20px;
-  padding-bottom: 5px;
+.nav-btm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1vw;
 }
 
-.nav-links li:hover {
-  border-bottom: 1.5px solid rgb(0, 0, 0);
+.nav-btm h5 {
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #ffffec;
+}
+
+.nav-btm a {
+  text-decoration: none;
+  color: #ffffec;
+  font-size: 1.2rem;
 }
 
 .nav-links li a {
   text-decoration: none;
   font-size: 3.5rem;
   font-weight: 600;
-  color: #000;
-}
-
-.nav-contact {
-  color: #000;
+  color: #ffffec;
 }
 
 .social {
   display: flex;
 }
 
-.social i {
-  color: #000;
+.social .fab {
+  color: #ffffec;
   font-size: 1.5rem;
-  margin: 20px 20px 0 0;
+  margin-left: 1rem;
+}
+
+.nav a:after {
+  content: "";
+  width: 0;
+  height: 2px;
+  display: block;
+  background: #ffffec;
+  transition: width 0.4s ease;
+}
+
+.social a:after {
+  margin-left: 0.5rem;
+}
+.nav a:hover:after {
+  width: 100%;
+}
+
+@media screen and (min-width: 1920px) {
+  .nav-container {
+    padding: 7vw 20vw;
+  }
+  .nav-links {
+    margin-bottom: 2vw;
+  }
+
+  .nav-btm h5 {
+    font-size: 1.4vw;
+  }
+
+  .nav-btm a {
+    font-size: 1.2vw;
+  }
+
+  .nav-links li a {
+    font-size: 3.5vw;
+  }
+
+  .social .fab {
+    font-size: 1.5vw;
+    margin-left: 1vw;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .nav-container {
+    padding: 7.5rem 10vw;
+  }
 }
 
 @media screen and (max-width: 768px) {
-  .nav-row {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    transform: translateY(90px);
+  .nav-container {
+    padding: 8rem 5vw;
   }
 
-  .nav-links li {
-    font-size: 3.3rem;
-    margin-bottom: 10px;
+  .nav-links li a {
+    font-size: 2.5rem;
   }
 
-  .social i {
-    font-size: 2rem;
-    margin: 10px 10px 0 10px;
+  .nav-btm h5 {
+    font-size: 1.2rem;
+  }
+
+  .nav-btm a {
+    font-size: 1rem;
   }
 }

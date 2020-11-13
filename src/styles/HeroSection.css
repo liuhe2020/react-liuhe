@@ -15,96 +15,45 @@ video {
 
 .intro {
   position: absolute;
+  width: 100%;
   color: #fff;
   display: flex;
   flex-direction: column;
+  text-align: center;
+  top: 37%;
   mix-blend-mode: difference;
-  right: 80px;
-  top: 180px;
+  overflow: hidden;
+  z-index: 2;
 }
 
-.intro span {
-  font-size: 4rem;
+.intro-top {
+  font-weight: 900;
+  font-size: 7vw;
+}
+
+.intro-btm {
   font-weight: 600;
-}
-
-.hero-words {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  color: #fff;
-  mix-blend-mode: overlay;
-}
-
-.hero-words-left {
-  position: absolute;
-  bottom: -205px;
-  left: -16px;
-  font-weight: 900;
-  font-size: 28.7rem;
-}
-
-.hero-words-top {
-  position: absolute;
-  bottom: 47px;
-  left: 260px;
-  font-weight: 900;
-  font-size: 13.7rem;
-}
-
-.hero-words-btm {
-  position: absolute;
-  bottom: -97px;
-  left: 260px;
-  font-weight: 900;
-  font-size: 13.7rem;
+  font-size: 3vw;
 }
 
 @media screen and (max-width: 1024px) {
-  .intro {
-    right: 25%;
-    top: 200px;
-  }
-  .hero-words-left {
-    bottom: -150px;
-    left: -16px;
-    font-size: 21rem;
+  .intro-top {
+    font-size: 10vw;
   }
 
-  .hero-words-top {
-    bottom: 35px;
-    left: 185px;
-    font-size: 10rem;
-  }
-
-  .hero-words-btm {
-    bottom: -70px;
-    left: 185px;
-    font-size: 10rem;
+  .intro-btm {
+    font-size: 5vw;
+    padding: 0 5vw;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .intro {
-    left: 10%;
-    right: 0;
-    top: 250px;
-  }
-  .hero-words-left {
-    bottom: -90px;
-    left: -16px;
-    font-size: 12.7rem;
+  .intro-top {
+    font-size: 15vw;
   }
 
-  .hero-words-top {
-    bottom: 23px;
-    left: 106px;
-    font-size: 6rem;
-  }
-
-  .hero-words-btm {
-    bottom: -41px;
-    left: 106px;
-    font-size: 6rem;
+  .intro-btm {
+    font-size: 8vw;
+    padding: 0 5vw;
   }
 }

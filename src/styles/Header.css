@@ -1,12 +1,13 @@
 .header {
+  background: transparent;
   width: 100%;
   position: fixed;
-  z-index: 4;
+  z-index: 5;
   mix-blend-mode: difference;
 }
 
 .header-container {
-  height: 100px;
+  height: 15vh;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,39 +15,49 @@
 }
 
 .logo {
-  width: 150px;
-  text-decoration: none;
+  width: 100px;
+  transform: translateY(5px);
 }
 
-.logo-left {
-  color: #fff;
-  font-weight: 900;
-  font-size: 2rem;
-}
-
-.logo-right {
-  color: #61dbfb;
-  font-weight: 900;
-  font-size: 2rem;
+.logo img {
+  max-width: 100%;
+  height: auto;
 }
 
 .nav-toggle {
-  font-size: 1.8rem;
+  font-size: 2rem;
   cursor: pointer;
   color: #fff;
 }
 
 .nav-close {
   display: none;
-  margin-right: -4px;
   font-size: 2rem;
   cursor: pointer;
   color: #fff;
 }
 
+@media screen and (min-width: 1920px) {
+  .header-container {
+    margin: 0 9vw;
+  }
+
+  .logo {
+    width: 6vw;
+    transform: translateY(0.4vw);
+  }
+
+  .nav-toggle {
+    font-size: 2vw;
+  }
+
+  .nav-close {
+    font-size: 2vw;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .header-container {
-    height: 80px;
     margin: 0 25px;
   }
 }

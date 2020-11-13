@@ -1,45 +1,41 @@
 .footer {
-  background: #fbfdf0;
+  background: #03010e;
+}
+
+.footer-container {
+  position: relative;
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 200px;
-  overflow: hidden;
+  height: 250px;
+  padding: 30px 150px;
 }
 
 .footer-text {
-  position: relative;
+  color: #ffffec;
+  font-weight: 600;
+  font-size: 5rem;
+  margin: 1rem 0;
 }
 
-.footer-text-top {
-  position: absolute;
-  font-weight: 900;
-  font-size: 9.6rem;
-  top: -21px;
-  left: -5px;
-}
-
-.footer-text-btm {
-  position: absolute;
-  font-weight: 900;
-  font-size: 9.6rem;
-  top: 83px;
-  left: -2px;
+.footer-left img {
+  width: 100px;
+  mix-blend-mode: difference;
 }
 
 .footer-list {
   list-style: none;
-  text-align: center;
-  margin: auto 30px;
-}
-
-.footer-list li {
-  margin-top: 10px;
+  text-align: end;
+  margin: 1.3rem 0;
 }
 
 .footer-list a {
   text-decoration: none;
-  color: #000;
+  color: #ffffec;
+}
+
+.footer-list-item {
+  margin-bottom: 1.5rem;
 }
 
 .footer-list-item a {
@@ -48,35 +44,84 @@
 }
 
 .copyright {
+  position: absolute;
+  width: 100%;
+  bottom: 2.6rem;
+  text-align: center;
   font-size: 1.2rem;
+  color: #ffffec;
 }
 
-@media screen and (max-width: 1024px) {
-  .footer {
-    justify-content: center;
-    height: 300px;
+@media screen and (min-width: 1920px) {
+  .footer-container {
+    height: 15.5vw;
+    padding: 2vw 9vw;
   }
 
-  .footer-text-top {
-    font-size: 6.8rem;
-    top: 217px;
-    left: -206px;
+  .footer-text {
+    font-size: 5vw;
+    margin: 1vw 0;
   }
 
-  .footer-text-btm {
-    font-size: 6.8rem;
-    top: 217px;
-    left: 94px;
+  .footer-left img {
+    width: 6vw;
   }
 
   .footer-list {
-    margin: 20px 30px;
+    margin: 1.3vw 0;
+  }
+
+  .footer-list-item {
+    margin-bottom: 1.5vw;
+  }
+
+  .footer-list-item a {
+    font-size: 2vw;
+  }
+
+  .copyright {
+    bottom: 2.6vw;
+    font-size: 1.2vw;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .footer-container {
+    padding: 30px;
+  }
+
+  .footer-text {
+    font-size: 4.2rem;
+    margin: 1rem 0 1.5rem 0;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .footer {
-    justify-content: center;
-    height: 200px;
+  .footer-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 320px;
+  }
+
+  .footer-left img {
+    display: none;
+  }
+
+  .footer-text {
+    font-size: 3.2rem;
+    text-align: center;
+    margin: 0;
+  }
+
+  .footer-list {
+    text-align: center;
+    margin: 0;
+  }
+
+  .footer-list-item {
+    margin: 0.8rem 0 0 0;
+  }
+  .copyright {
+    bottom: 1.5rem;
   }
 }

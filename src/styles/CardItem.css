@@ -1,6 +1,6 @@
 .cards {
-  padding: 200px 0;
-  background-color: #000;
+  padding: 120px 0;
+  background-color: #fafafa;
 }
 
 .cards-item-container {
@@ -10,7 +10,7 @@
   max-width: 1200px;
   height: 480px;
   display: flex;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px #00000029, 0 3px 6px #0000003b;
 }
 
 .cards-inner {
@@ -19,22 +19,41 @@
   position: relative;
 }
 
-.cards-item-img {
+.img-container {
   width: 100%;
   height: 415px;
+  transform: translate(40px, -40px);
+  box-shadow: 0 10px 20px #00000030, 0 6px 6px #0000003b;
+  position: relative;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.img-container:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #fff;
+}
+
+.cards-item-img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  margin-top: -40px;
-  margin-left: 40px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  position: absolute;
+  right: 0;
 }
 
 .cards-item-link {
   text-decoration: none;
-  max-width: 70%;
+  width: 75%;
 }
 
 .cards-item-title {
-  color: #000;
+  color: #03010e;
   font-size: 4.9rem;
   font-weight: bold;
   transform: translateY(15px);
@@ -43,14 +62,16 @@
 .cards-item-info {
   display: flex;
   flex-direction: column;
-  max-width: 30%;
+  width: 25%;
   margin-left: 60px;
+  overflow: hidden;
 }
 
 .cards-item-text {
   max-width: 100%;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   padding: 2rem 1rem;
+  margin-right: 20px;
 }
 
 .cards-item-git-link {
@@ -64,8 +85,10 @@
 }
 
 .cards-item-git {
-  color: #000;
-  font-size: 1.2rem;
+  color: #03010e;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transform: translateY(3px);
 }
 
 .cards-item-bottom {
@@ -98,29 +121,85 @@
   width: 2rem;
 }
 
+@media screen and (min-width: 1920px) {
+  .cards {
+    padding: 12.5vw 0;
+  }
+  .cards-item-container {
+    max-width: 75vw;
+    height: 30vw;
+  }
+
+  .cards-inner {
+    max-width: 87.5vw;
+  }
+
+  .img-container {
+    height: 26vw;
+    transform: translate(2.5vw, -2.5vw);
+  }
+
+  .cards-item-title {
+    font-size: 4vw;
+  }
+
+  .cards-item-arrow-right {
+    width: 5.5vw;
+    height: 4.5vw;
+  }
+
+  .cards-item-link:hover .cards-item-arrow-right {
+    width: 7.5vw;
+  }
+
+  .cards-item-info {
+    margin-left: 4vw;
+  }
+
+  .cards-item-text {
+    font-size: 1.2vw;
+    padding: 2vw 2vw;
+    margin-right: 1.25vw;
+  }
+
+  .cards-item-git-link {
+    padding: 0.5vw 0;
+  }
+
+  .cards-item-git {
+    font-size: 1.5vw;
+    transform: translateY(0.2vw);
+  }
+
+  .cards-item-arrow-left {
+    width: 1.6vw;
+    height: 1.4vw;
+    margin-left: 0.5vw;
+  }
+
+  .cards-item-git-link:hover .cards-item-arrow-left {
+    width: 2vw;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .cards-item-title {
     font-size: 3.4rem;
-    transform: translateY(10px);
+    transform: translateY(9px);
   }
 }
 
 @media screen and (max-width: 768px) {
   .cards {
-    padding: 150px 0;
+    padding: 80px 0;
   }
-
   .cards-item-container {
-    height: 530px;
+    height: 570px;
     flex-direction: column;
   }
 
   .cards-item-link {
-    max-width: 100%;
-  }
-
-  .cards-item-info {
-    max-width: 100%;
+    width: 100%;
   }
 
   .cards-item-link {
@@ -128,32 +207,29 @@
     justify-content: center;
   }
 
-  .cards-item-img {
-    margin-left: 0;
+  .img-container {
+    transform: translate(0, -40px);
     width: 90%;
   }
 
   .cards-item-info {
     flex-direction: row-reverse;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     width: 90%;
-    margin: 20px auto;
+    margin: 0 auto;
   }
 
   .cards-item-text {
-    max-width: 75%;
-    font-size: 1rem;
+    max-width: 70%;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
     padding: 0;
   }
 
   .cards-item-git-link {
     max-width: 25%;
     padding: 0;
-  }
-
-  .cards-item-git {
-    font-size: 1rem;
   }
 
   .cards-item-bottom {
@@ -164,6 +240,6 @@
   .cards-item-title {
     font-size: 3rem;
     line-height: 2rem;
-    transform: translateY(5px);
+    transform: translateY(7px);
   }
 }

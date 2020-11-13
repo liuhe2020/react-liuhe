@@ -3,51 +3,51 @@
 }
 
 .slogan {
-  max-width: 900px;
+  color: #03010e;
+  max-width: 55vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 200px 200px 200px;
+  margin: 12vw 12vw 12vw;
 }
 
 .slogan h1 {
-  font-size: 4rem;
+  font-size: 4vw;
   font-weight: 600;
-  margin-bottom: 1.5rem;
-  line-height: 4rem;
+  margin-bottom: 1.5vw;
+  line-height: 4vw;
 }
 
 .slogan h3 {
-  font-size: 2rem;
-  line-height: 2rem;
+  font-size: 2vw;
+  line-height: 2.2vw;
 }
 
 @media screen and (max-width: 1024px) {
   .slogan {
-    margin: 150px 100px;
+    max-width: 100%;
+    margin: 15vw 10vw;
   }
   .slogan h1 {
-    font-size: 3rem;
-    line-height: 3rem;
+    font-size: 5vw;
+    line-height: 5vw;
+    margin-bottom: 3vw;
   }
 
   .slogan h3 {
-    font-size: 1.6rem;
-    line-height: 1.5rem;
+    font-size: 3vw;
+    line-height: 3.5vw;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .slogan {
-    margin: 120px 50px;
-  }
   .slogan h1 {
-    font-size: 2.5rem;
-    line-height: 3rem;
+    font-size: 7vw;
+    line-height: 7vw;
   }
 
   .slogan h3 {
-    font-size: 1.4rem;
-    line-height: 1.5rem;
+    font-size: 4.5vw;
+    line-height: 5vw;
   }
 }

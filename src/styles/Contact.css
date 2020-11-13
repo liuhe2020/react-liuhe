@@ -6,13 +6,25 @@
 
 .contact-title-container {
   display: flex;
+  justify-content: center;
   align-items: center;
   width: 35%;
-  background: #fafafa;
+  background: rgb(5, 5, 5);
+  color: #fff;
+  mix-blend-mode: difference;
+  z-index: 2;
+}
+
+.contact-title-inner {
+  display: flex;
+  align-items: center;
+  height: 15vw;
+  overflow: hidden;
+  margin-left: 8vw;
+  visibility: hidden;
 }
 
 .contact-title {
-  margin-left: 8vw;
   font-size: 7.2vw;
   font-weight: 900;
   line-height: 5.5vw;
@@ -44,13 +56,13 @@
   outline: none;
   border: none;
   border-bottom: 1px solid #dcdcdc;
-  margin-bottom: 2vw;
+  margin-top: 2vw;
   font-size: 1.8vw;
 }
 
 .form-top-right {
   width: 25vw;
-  margin: 1vw 0 2vw 0;
+  margin-top: 3vw;
 }
 
 .textarea {
@@ -66,13 +78,28 @@
   cursor: pointer;
   outline: none;
   border: none;
-  margin-top: 1vw;
+  margin-top: 3vw;
   background: #fff;
   font-size: 1.8vw;
   font-weight: 600;
 }
 
 .form-error {
+  color: #ff0000;
+}
+
+.status-msg {
+  font-weight: 600;
+  font-size: 1.8vw;
+  margin-top: 3vw;
+  opacity: 0;
+}
+.success {
+  opacity: 1;
+  color: #03010e;
+}
+.failure {
+  opacity: 1;
   color: #ff0000;
 }
 
@@ -102,6 +129,10 @@
     padding: 15vw 0 5vw 0;
   }
 
+  .contact-title-inner {
+    margin: 5vw 0 0 0;
+  }
+
   .form {
     width: 100%;
     margin: 0;
@@ -109,7 +140,6 @@
 
   .contact-title {
     width: 100%;
-    margin: 0;
     font-size: 15vw;
     text-align: center;
   }
@@ -118,7 +148,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin-top: 5vw;
+    margin-top: 2vw;
   }
 
   .form-top-left {
@@ -127,21 +157,27 @@
   }
   .input-field {
     height: 8vw;
-    margin-bottom: 4vw;
+    margin-top: 4vw;
     font-size: 4vw;
   }
 
   .form-top-right {
     width: 80%;
-    height: 25vw;
+    height: 30vw;
     margin: 0;
   }
 
   .textarea {
     font-size: 4vw;
+    margin-top: 4vw;
   }
   .form-button {
-    margin: 5vw auto 10vw auto;
+    margin: 10vw auto 4vw auto;
     font-size: 4vw;
+  }
+
+  .status-msg {
+    font-size: 4vw;
+    margin: 0 auto 10vw auto;
   }
 }

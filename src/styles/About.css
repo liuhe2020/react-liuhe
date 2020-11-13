@@ -1,0 +1,180 @@
+.about-container {
+  width: 100%;
+}
+
+.top-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.about-titles {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  top: 25%;
+  right: 15%;
+  line-height: 5vw;
+  mix-blend-mode: difference;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.about-titles h1 {
+  font-weight: 900;
+  color: #fff;
+}
+
+.title1 {
+  font-size: 5.5vw;
+}
+
+.title2 {
+  font-size: 4.5vw;
+}
+
+.title3 {
+  line-height: 4vw;
+  font-size: 3.5vw;
+}
+
+.top-container img {
+  position: absolute;
+  height: auto;
+}
+
+.about-img1 {
+  width: 40vw;
+  bottom: 0;
+  left: 10vw;
+}
+
+.about-img2 {
+  width: 40vw;
+  bottom: 0;
+  right: 10vw;
+}
+
+.btm-container {
+  background: #fafafa;
+  color: #03010e;
+  width: 100%;
+  padding: 11vw;
+}
+
+.info-container h3 {
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 0.5vw;
+}
+
+.info-container p {
+  font-size: 1.5rem;
+  margin-bottom: 4vw;
+}
+
+@media screen and (min-width: 1920px) {
+  .info-container h3 {
+    font-size: 2vw;
+    margin-bottom: 0.5vw;
+  }
+
+  .info-container p {
+    font-size: 1.5vw;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .about-titles {
+    top: 25%;
+    right: 10%;
+    line-height: 5rem;
+  }
+
+  .title1 {
+    font-size: 4.5rem;
+  }
+
+  .title2 {
+    font-size: 4rem;
+  }
+
+  .title3 {
+    line-height: 4rem;
+    font-size: 3.5rem;
+  }
+
+  .about-img1 {
+    width: 45vw;
+    bottom: 0;
+    left: 10vw;
+  }
+
+  .about-img2 {
+    width: 45vw;
+    bottom: 0;
+    right: 5vw;
+  }
+
+  .btm-container {
+    padding: 7rem 5rem;
+  }
+
+  .info-container h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  .info-container p {
+    margin-bottom: 3rem;
+  }
+}
+
+@media screen and (max-width: 758px) {
+  .about-titles {
+    top: 30%;
+    right: 10%;
+    line-height: 3.5rem;
+  }
+
+  .title1 {
+    font-size: 3.5rem;
+  }
+
+  .title2 {
+    font-size: 3rem;
+  }
+
+  .title3 {
+    line-height: 3rem;
+    font-size: 2.5rem;
+  }
+
+  .about-img1 {
+    width: 55vw;
+    bottom: 0;
+    left: 5vw;
+  }
+
+  .about-img2 {
+    width: 55vw;
+    bottom: 0;
+    right: -4vw;
+  }
+
+  .btm-container {
+    padding: 5rem 2rem;
+  }
+
+  .info-container h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .info-container p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+  }
+}
