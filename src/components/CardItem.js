@@ -1,15 +1,10 @@
 import React, { useEffect } from "react";
 import "../styles/CardItem.css";
 import gsap from "gsap";
-import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(CSSRulePlugin);
 gsap.registerPlugin(ScrollTrigger);
 
 function CardItem(props) {
-  const imageReveal = CSSRulePlugin.getRule(".img-container:after");
-
   useEffect(() => {
     // project title slide in animation
     gsap.fromTo(
@@ -63,7 +58,7 @@ function CardItem(props) {
         ease: "power2.easeInOut",
       })
       .fromTo(
-        imageReveal,
+        ".img-overlay",
         { width: "100%" },
         {
           width: "0%",
@@ -91,7 +86,7 @@ function CardItem(props) {
         },
       }
     );
-  }, [imageReveal]);
+  }, []);
 
   return (
     <div className="cards" id="cards">
@@ -105,6 +100,7 @@ function CardItem(props) {
           >
             <div className="img-container">
               <img className="cards-item-img" src={props.src} alt="Project" />
+              <div className="img-overlay"></div>
             </div>
             <div className="cards-item-bottom">
               <img

@@ -140,16 +140,16 @@
   }
 
   .title1 {
-    font-size: 3.5rem;
-  }
-
-  .title2 {
     font-size: 3rem;
   }
 
-  .title3 {
-    line-height: 3rem;
+  .title2 {
     font-size: 2.5rem;
+  }
+
+  .title3 {
+    line-height: 2.5rem;
+    font-size: 2rem;
   }
 
   .about-img1 {

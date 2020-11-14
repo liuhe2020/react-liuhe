@@ -29,14 +29,14 @@
   visibility: hidden;
 }
 
-.img-container:after {
-  content: "";
+.img-overlay {
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   right: 0;
   background: #fff;
+  z-index: 1;
 }
 
 .cards-item-img {
