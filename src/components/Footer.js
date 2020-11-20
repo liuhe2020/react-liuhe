@@ -41,6 +41,16 @@ function Footer() {
             </a>
           </li>
         </ul>
+        <div className="contact-info">
+          <div className="contact-email">
+            <h5>Email</h5>
+            <a href="mailto:lhe19@yahoo.co.uk">lhe19@yahoo.co.uk</a>
+          </div>
+          <div className="contact-phone">
+            <h5>Phone</h5>
+            <a href="tel:+447957622859">+44 7957 622859</a>
+          </div>
+        </div>
       </div>
       <div className="copyright">© 2020 Liu Reacts. All Rights Reserved.</div>
     </div>

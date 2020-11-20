@@ -16,12 +16,12 @@ const aboutMe = [
   {
     title: "Where am I?",
     text:
-      "I was born and raised in southern China. In 2003, I moved to London, UK and have been living here ever since.",
+      "I was born and raised in southern China. In 2003, I moved to London, UK and now I live in Sheffield, Yorkshire.",
   },
   {
     title: "Why web development?",
     text:
-      "Tech has been a life long passion of mine. In Auguest 2020, I decided to pursuit a career in web development. The biggest challenge was to learn to code from scratch and build a foundation to solve real world problems. I really enjoy learning new techniques every day and being able to implement them into my work. My long term goal is to become a full stack developer.",
+      "Tech has been a life long passion of mine. In Auguest 2020, I decided to pursuit a career in web development. The biggest challenge was to learn to code from scratch and build a foundation to solve real world problems. I really enjoy learning new things every day and being able to implement them into my work. My long term goal is to become a full stack developer.",
   },
   {
     title: "What are my past experiences?",

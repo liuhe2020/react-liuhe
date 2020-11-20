@@ -6,9 +6,43 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Banner() {
   useEffect(() => {
+    //slogan slide up animation
+    gsap.from(".slogan1", 1, {
+      y: "30vh",
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: ".slogan1",
+        start: "top 100%",
+      },
+    });
+    gsap.from(".slogan2", 1, {
+      y: "30vh",
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: ".slogan2",
+        start: "top 100%",
+      },
+    });
+    gsap.from(".slogan3", 1, {
+      y: "30vh",
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: ".slogan3",
+        start: "top 100%",
+      },
+    });
+    gsap.from(".slogan4", 1, {
+      y: "30vh",
+      ease: "power4.out",
+      scrollTrigger: {
+        trigger: ".slogan4",
+        start: "top 100%",
+      },
+    });
+
     //text fade in animation
     gsap.fromTo(
-      ".slogan",
+      ".banner-text",
       {
         autoAlpha: 0,
         y: "15vh",
@@ -19,7 +53,7 @@ function Banner() {
         y: 0,
         ease: "power4.out",
         scrollTrigger: {
-          trigger: ".slogan",
+          trigger: ".banner-text",
           start: "top 80%",
         },
       }
@@ -29,13 +63,24 @@ function Banner() {
   return (
     <div className="banner">
       <div className="slogan">
-        <h1>TURN POTENTIAL INTO PERFORMANCE</h1>
-        <h3>
+        <div className="slogan-container">
+          <h1 className="slogan1">TURN</h1>
+        </div>
+        <div className="slogan-container">
+          <h1 className="slogan2">POTENTIAL</h1>
+        </div>
+        <div className="slogan-container">
+          <h1 className="slogan3">INTO</h1>
+        </div>
+        <div className="slogan-container">
+          <h1 className="slogan4">PERFORMANCE</h1>
+        </div>
+        <h2 className="banner-text">
           I strive to create beautiful looking and interactive websites by
           merging imagination and technology to help your business accelerate
           its digital transformation. The goal isn't to build a website. The
           goal is to build your business.
-        </h3>
+        </h2>
       </div>
     </div>
   );

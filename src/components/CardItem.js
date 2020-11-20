@@ -77,6 +77,7 @@ function CardItem(props) {
       },
       {
         duration: 1,
+        delay: 0.6,
         autoAlpha: 1,
         y: 0,
         ease: "power2.out",

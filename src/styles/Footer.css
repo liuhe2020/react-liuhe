@@ -1,5 +1,6 @@
 .footer {
   background: #03010e;
+  position: relative;
 }
 
 .footer-container {
@@ -52,6 +53,10 @@
   color: #ffffec;
 }
 
+.contact-info {
+  display: none;
+}
+
 @media screen and (min-width: 1920px) {
   .footer-container {
     height: 15.5vw;
@@ -100,7 +105,7 @@
   .footer-container {
     flex-direction: column;
     justify-content: flex-start;
-    height: 320px;
+    height: 400px;
   }
 
   .footer-left img {
@@ -115,7 +120,7 @@
 
   .footer-list {
     text-align: center;
-    margin: 0;
+    margin: 0 0 1.5rem 0;
   }
 
   .footer-list-item {
@@ -123,5 +128,22 @@
   }
   .copyright {
     bottom: 1.5rem;
+  }
+
+  .contact-info {
+    display: flex;
+    justify-content: space-around;
+    color: #ffffec;
+  }
+
+  .contact-info h5 {
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+
+  .contact-info a {
+    text-decoration: none;
+    color: #ffffec;
+    font-size: 1.2rem;
   }
 }
