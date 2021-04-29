@@ -47,7 +47,7 @@ function Header({ history }) {
     <div className="header">
       <div className="header-container">
         <HashLink to="/#home" smooth className="logo">
-          <img src="/svg/liu_reacts_logo.png" alt="liu_reacts_logo" />
+          <img src="/svg/liu_he_logo.png" alt="liu_he_logo" />
         </HashLink>
         <GiHamburgerMenu
           className="nav-toggle"
