@@ -8,7 +8,7 @@ function CardItem(props) {
   useEffect(() => {
     // project title slide in animation
     gsap.fromTo(
-      ".cards-item-bottom",
+      ".card-item-link",
       {
         autoAlpha: 0,
         x: "-15vw",
@@ -19,15 +19,15 @@ function CardItem(props) {
         duration: 1.4,
         ease: "power2.out",
         scrollTrigger: {
-          trigger: ".cards-item-bottom",
-          start: "top 85%",
+          trigger: ".img-container",
+          start: "top 40%",
         },
       }
     );
 
     // github link slide in animation
     gsap.fromTo(
-      ".cards-item-git-link",
+      ".card-item-git-link",
       {
         autoAlpha: 0,
         x: "100vw",
@@ -38,8 +38,8 @@ function CardItem(props) {
         duration: 0.5,
         ease: "power2.out",
         scrollTrigger: {
-          trigger: ".cards-item-bottom",
-          start: "top 85%",
+          trigger: ".img-container",
+          start: "top 40%",
         },
       }
     );
@@ -53,10 +53,15 @@ function CardItem(props) {
     });
 
     tl.to(".img-container", 0, { css: { visibility: "visible" } })
-      .from(".cards-item-img", 1.4, {
-        scale: 1.6,
-        ease: "power2.easeInOut",
-      })
+      .fromTo(
+        ".card-item-img",
+        { scale: 1.6 },
+        {
+          scale: 1,
+          duration: 1.4,
+          ease: "power2.easeInOut",
+        }
+      )
       .fromTo(
         ".img-overlay",
         { width: "100%" },
@@ -70,7 +75,7 @@ function CardItem(props) {
 
     // project description text fade in animation
     gsap.fromTo(
-      ".cards-item-text",
+      ".card-item-text",
       {
         autoAlpha: 0,
         y: "15vh",
@@ -90,45 +95,41 @@ function CardItem(props) {
   }, []);
 
   return (
-    <div className="cards" id="cards">
-      <div className="cards-inner">
-        <div className="cards-item-container">
+    <div className="card" id="card">
+      <div className="card-item-container">
+        <div className="img-container">
+          <img className="card-item-img" src={props.src} alt="project_img" />
+          <div className="img-overlay"></div>
+        </div>
+        <div className="card-item-info">
           <a
-            className="cards-item-link"
+            className="card-item-git-link"
             target="_blank"
             rel="noopener noreferrer"
-            href={props.url}
+            href={props.gitUrl}
           >
-            <div className="img-container">
-              <img className="cards-item-img" src={props.src} alt="Project" />
-              <div className="img-overlay"></div>
-            </div>
-            <div className="cards-item-bottom">
-              <img
-                className="cards-item-arrow-right"
-                src="../svg/arrow_right.png"
-                alt="Arrow Icon"
-              />
-              <h1 className="cards-item-title">{props.title}</h1>
-            </div>
+            <h4 className="card-item-git">GitHub</h4>
+            <img
+              className="card-item-arrow-left"
+              src="../svg/arrow_left.png"
+              alt="Arrow Icon"
+            />
           </a>
-          <div className="cards-item-info">
-            <a
-              className="cards-item-git-link"
-              target="_blank"
-              rel="noopener noreferrer"
-              href={props.gitUrl}
-            >
-              <h5 className="cards-item-git">GitHub</h5>
-              <img
-                className="cards-item-arrow-left"
-                src="../svg/arrow_left.png"
-                alt="Arrow Icon"
-              />
-            </a>
-            <h5 className="cards-item-text">{props.text}</h5>
-          </div>
+          <p className="card-item-text">{props.text}</p>
         </div>
+        <a
+          className="card-item-link"
+          target="_blank"
+          rel="noopener noreferrer"
+          href={props.url}
+        >
+          <img
+            className="card-item-arrow-right"
+            src="../svg/arrow_right.png"
+            alt="Arrow Icon"
+          />
+          <h3 className="card-item-title">{props.title}</h3>
+        </a>
       </div>
     </div>
   );

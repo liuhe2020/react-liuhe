@@ -1,15 +1,12 @@
-import React from "react";
 import { FaTwitter, FaLinkedinIn, FaGithubAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import "../styles/Nav.css";
 
 function Nav() {
-  // offsetting hash link scroll position, not perfect atm due to navbar toggle is constantly changing element Y position
-  const scrollWithOffset = (el) => {
-    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
-    const navHeight = document.querySelector(".nav").offsetHeight / 1.7;
-    window.scrollTo({ top: yCoordinate - navHeight, behavior: "smooth" });
+  // manually set scroll to projects for hashlink due to collapsing navbar when navigating
+  const scrollWithOffset = (navBar) => {
+    window.scrollTo({ top: navBar.offsetTop, behavior: "smooth" });
   };
 
   return (
@@ -20,8 +17,7 @@ function Nav() {
             <li>
               <HashLink
                 to="/#projects"
-                smooth
-                scroll={(el) => scrollWithOffset(el)}
+                scroll={(navBar) => scrollWithOffset(navBar)}
               >
                 Projects
               </HashLink>
@@ -49,13 +45,6 @@ function Nav() {
               rel="noopener noreferrer"
               href="https://www.linkedin.com/in/liuhe2020"
             >
-              <FaTwitter className="fab" />
-            </a>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://twitter.com/liuhe2020"
-            >
               <FaLinkedinIn className="fab" />
             </a>
             <a
@@ -64,6 +53,13 @@ function Nav() {
               href="https://github.com/liuhe2020"
             >
               <FaGithubAlt className="fab" />
+            </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://twitter.com/liuhe2020"
+            >
+              <FaTwitter className="fab" />
             </a>
           </div>
         </div>

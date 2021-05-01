@@ -9,7 +9,7 @@ function Footer() {
         <div className="footer-left">
           <h2 className="footer-text">LET'S CONNECT</h2>
           <NavLink to="/">
-            <img src="/svg/liu_reacts_logo.png" alt="liu_reacts_logo" />
+            <img src="/svg/liu_he_logo.png" alt="liu_he_logo" />
           </NavLink>
         </div>
         <ul className="footer-list">
@@ -52,7 +52,7 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="copyright">© 2020 Liu Reacts. All Rights Reserved.</div>
+      <div className="copyright">© 2021 Liu He .dev. All Rights Reserved.</div>
     </div>
   );
 }

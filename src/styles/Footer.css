@@ -28,6 +28,7 @@
   list-style: none;
   text-align: end;
   margin: 1.3rem 0;
+  z-index: 1;
 }
 
 .footer-list a {

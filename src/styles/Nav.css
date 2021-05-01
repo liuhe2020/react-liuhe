@@ -1,6 +1,6 @@
 .nav {
-  height: 40vh;
-  top: -40vh;
+  height: 320px;
+  top: -320px;
   width: 100%;
   position: fixed;
   z-index: 4;

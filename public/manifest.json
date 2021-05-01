@@ -1,6 +1,6 @@
 {
-  "short_name": "Liu Reacts",
-  "name": "Liu Reacts Web Developer",
+  "short_name": "Liu He",
+  "name": "Liu He Web Developer",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "liu_react_192.png",
+      "src": "liu_he_192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "liu_react_512.png",
+      "src": "liu_he_512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
