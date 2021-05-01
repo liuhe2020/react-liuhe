@@ -9,6 +9,7 @@
   align-items: center;
   color: #03010e;
   padding: 11vw;
+  overflow: hidden;
 }
 
 .banner2-topleft {

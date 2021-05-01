@@ -1,10 +1,8 @@
-import React from "react";
-import Header from "./components/Header";
-import Nav from "./components/Nav";
 import { Route, Switch, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import "./styles/App.css";
-
+import Header from "./components/Header";
+import Nav from "./components/Nav";
 import Home from "./components/pages/Home";
 import Contact from "./components/pages/Contact";
 import About from "./components/pages/About";

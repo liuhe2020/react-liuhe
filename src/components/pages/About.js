@@ -1,11 +1,12 @@
-import React, { useEffect, useRef } from "react";
-import Footer from "../Footer";
-import Overlay from "../Overlay";
-import "../../styles/About.css";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import ScrollToTop from "../ScrollToTop";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import "../../styles/About.css";
+import ScrollToTop from "../ScrollToTop";
+import Footer from "../Footer";
+import Overlay from "../Overlay";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const aboutMe = [

@@ -1,4 +1,3 @@
-import React from "react";
 import "../styles/Overlay.css";
 
 // black overlay canvas for animation on all page load

@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
-import Overlay from "./Overlay";
-import "../styles/HeroSection.css";
+import { useEffect } from "react";
 import gsap from "gsap";
+import "../styles/HeroSection.css";
+import Overlay from "./Overlay";
 
 function HeroSection() {
   useEffect(() => {

@@ -1,8 +1,9 @@
-import React, { useEffect, useRef } from "react";
-import "../styles/Banner2.css";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { useIntersection } from "react-use";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useIntersection } from "react-use";
+import "../styles/Banner2.css";
+
 gsap.registerPlugin(ScrollTrigger);
 
 function Banner2() {
@@ -12,7 +13,7 @@ function Banner2() {
       ".banner2-topright",
       {
         autoAlpha: 0,
-        x: "15vh",
+        x: "15vw",
       },
       {
         duration: 1,

@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { FaRegArrowAltCircleUp } from "react-icons/fa";
 import { withRouter } from "react-router-dom";
 // hash link allows scroll to hash(element by #id) even from another page component
 import { HashLink } from "react-router-hash-link";
-import "../styles/Header.css";
 import gsap from "gsap";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { FaRegArrowAltCircleUp } from "react-icons/fa";
+import "../styles/Header.css";
 
 function Header({ history }) {
   const [menuSate, setMenuState] = useState({ menuOpen: false });

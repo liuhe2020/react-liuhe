@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import Footer from "../Footer";
-import Overlay from "../Overlay";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
-import ScrollToTop from "../ScrollToTop";
-import "../../styles/Contact.css";
 import gsap from "gsap";
+import "../../styles/Contact.css";
+import ScrollToTop from "../ScrollToTop";
+import Footer from "../Footer";
+import Overlay from "../Overlay";
 
 function Contact() {
   ScrollToTop();

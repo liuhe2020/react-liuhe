@@ -1,5 +1,4 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import "../styles/Footer.css";
 
 function Footer() {
@@ -8,9 +7,9 @@ function Footer() {
       <div className="footer-container">
         <div className="footer-left">
           <h2 className="footer-text">LET'S CONNECT</h2>
-          <NavLink to="/">
+          <HashLink to="/#home" smooth>
             <img src="/svg/liu_he_logo.png" alt="liu_he_logo" />
-          </NavLink>
+          </HashLink>
         </div>
         <ul className="footer-list">
           <li className="footer-list-item">

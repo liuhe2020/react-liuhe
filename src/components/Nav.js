@@ -1,6 +1,6 @@
-import { FaTwitter, FaLinkedinIn, FaGithubAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import { FaTwitter, FaLinkedinIn, FaGithubAlt } from "react-icons/fa";
 import "../styles/Nav.css";
 
 function Nav() {
