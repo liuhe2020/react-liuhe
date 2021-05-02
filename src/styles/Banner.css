@@ -20,7 +20,7 @@
   line-height: 11vw;
 }
 
-.slogan h2 {
+.banner-text {
   color: #03010e;
   font-size: 2vw;
   line-height: 2.2vw;
@@ -33,7 +33,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .slogan h2 {
+  .banner-text {
     font-size: 3vw;
     line-height: 3.5vw;
   }
@@ -44,7 +44,7 @@
     margin: 15vw 11vw;
   }
 
-  .slogan h2 {
+  .banner-text {
     font-size: 4.5vw;
     line-height: 5vw;
   }

@@ -181,3 +181,9 @@
     margin: 0 auto 10vw auto;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .contact-title-container {
+    padding: calc(10vw + 100px) 0 calc(3vw + 50px) 0;
+  }
+}

@@ -19,7 +19,6 @@
   box-shadow: 0 10px 20px #00000030, 0 6px 6px #0000003b;
   position: relative;
   overflow: hidden;
-  visibility: hidden;
 }
 
 .img-overlay {
@@ -69,12 +68,16 @@
   height: 1.4rem;
 }
 
+.card-item-link-container {
+  transform: translateY(-20px);
+  overflow: hidden;
+}
+
 .card-item-link {
   text-decoration: none;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  transform: translateY(-20px);
   margin: 10px 0;
 }
 

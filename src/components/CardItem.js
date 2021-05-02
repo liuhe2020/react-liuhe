@@ -1,14 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import "../styles/CardItem.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 function CardItem(props) {
+  let projectLink = useRef(null);
+  let gitLink = useRef(null);
+  let img = useRef(null);
+  let overlay = useRef(null);
+  let projectInfo = useRef(null);
+
   useEffect(() => {
     // project title slide in animation
     gsap.fromTo(
-      ".card-item-link",
+      projectLink,
       {
         autoAlpha: 0,
         x: "-15vw",
@@ -19,15 +25,15 @@ function CardItem(props) {
         duration: 1.4,
         ease: "power2.out",
         scrollTrigger: {
-          trigger: ".img-container",
-          start: "top 40%",
+          trigger: projectLink,
+          start: "top 90%",
         },
       }
     );
 
     // github link slide in animation
     gsap.fromTo(
-      ".card-item-git-link",
+      gitLink,
       {
         autoAlpha: 0,
         x: "100vw",
@@ -38,8 +44,8 @@ function CardItem(props) {
         duration: 0.5,
         ease: "power2.out",
         scrollTrigger: {
-          trigger: ".img-container",
-          start: "top 40%",
+          trigger: gitLink,
+          start: "top 60%",
         },
       }
     );
@@ -47,35 +53,33 @@ function CardItem(props) {
     // project image reveal animation with scrolltrigger
     let tl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".img-container",
+        trigger: overlay,
         start: "top 60%",
       },
     });
 
-    tl.to(".img-container", 0, { css: { visibility: "visible" } })
-      .fromTo(
-        ".card-item-img",
-        { scale: 1.6 },
-        {
-          scale: 1,
-          duration: 1.4,
-          ease: "power2.easeInOut",
-        }
-      )
-      .fromTo(
-        ".img-overlay",
-        { width: "100%" },
-        {
-          width: "0%",
-          duration: 1.8,
-          ease: "power2.easeInOut",
-          delay: -1.4,
-        }
-      );
+    tl.fromTo(
+      img,
+      { scale: 1.6 },
+      {
+        scale: 1,
+        duration: 1.4,
+        ease: "power2.easeInOut",
+      }
+    ).fromTo(
+      overlay,
+      { width: "100%" },
+      {
+        width: "0%",
+        duration: 1.8,
+        ease: "power2.easeInOut",
+        delay: -1.4,
+      }
+    );
 
     // project description text fade in animation
     gsap.fromTo(
-      ".card-item-text",
+      projectInfo,
       {
         autoAlpha: 0,
         y: "15vh",
@@ -87,7 +91,7 @@ function CardItem(props) {
         y: 0,
         ease: "power2.out",
         scrollTrigger: {
-          trigger: ".img-container",
+          trigger: overlay,
           start: "top 60%",
         },
       }
@@ -98,11 +102,26 @@ function CardItem(props) {
     <div className="card" id="card">
       <div className="card-item-container">
         <div className="img-container">
-          <img className="card-item-img" src={props.src} alt="project_img" />
-          <div className="img-overlay"></div>
+          <img
+            ref={(el) => {
+              img = el;
+            }}
+            className="card-item-img"
+            src={props.src}
+            alt="project_img"
+          />
+          <div
+            ref={(el) => {
+              overlay = el;
+            }}
+            className="img-overlay"
+          ></div>
         </div>
         <div className="card-item-info">
           <a
+            ref={(el) => {
+              gitLink = el;
+            }}
             className="card-item-git-link"
             target="_blank"
             rel="noopener noreferrer"
@@ -115,21 +134,33 @@ function CardItem(props) {
               alt="Arrow Icon"
             />
           </a>
-          <p className="card-item-text">{props.text}</p>
+          <p
+            ref={(el) => {
+              projectInfo = el;
+            }}
+            className="card-item-text"
+          >
+            {props.text}
+          </p>
         </div>
-        <a
-          className="card-item-link"
-          target="_blank"
-          rel="noopener noreferrer"
-          href={props.url}
-        >
-          <img
-            className="card-item-arrow-right"
-            src="../svg/arrow_right.png"
-            alt="Arrow Icon"
-          />
-          <h3 className="card-item-title">{props.title}</h3>
-        </a>
+        <div className="card-item-link-container">
+          <a
+            ref={(el) => {
+              projectLink = el;
+            }}
+            className="card-item-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            href={props.url}
+          >
+            <img
+              className="card-item-arrow-right"
+              src="../svg/arrow_right.png"
+              alt="Arrow Icon"
+            />
+            <h3 className="card-item-title">{props.title}</h3>
+          </a>
+        </div>
       </div>
     </div>
   );
