@@ -50,6 +50,12 @@ function About() {
   const fadeInRefs = useRef([]);
   fadeInRefs.current = [];
 
+  const addToRefs = (el) => {
+    if (el && !fadeInRefs.current.includes(el)) {
+      fadeInRefs.current.push(el);
+    }
+  };
+
   useEffect(() => {
     // fix flashing animated titles on page load
     gsap.to(".top-container", { css: { visibility: "visible" } });
@@ -91,13 +97,6 @@ function About() {
       );
     });
   }, []);
-
-  // refs array for gsap fade in
-  const addToRefs = (el) => {
-    if (el && !fadeInRefs.current.includes(el)) {
-      fadeInRefs.current.push(el);
-    }
-  };
 
   return (
     <motion.div

@@ -5,16 +5,16 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 function CardItem(props) {
-  let projectLink = useRef(null);
-  let gitLink = useRef(null);
-  let img = useRef(null);
+  const projectLink = useRef(null);
+  const gitLink = useRef(null);
+  const img = useRef(null);
+  const projectInfo = useRef(null);
   let overlay = useRef(null);
-  let projectInfo = useRef(null);
 
   useEffect(() => {
     // project title slide in animation
     gsap.fromTo(
-      projectLink,
+      projectLink.current,
       {
         autoAlpha: 0,
         x: "-15vw",
@@ -25,15 +25,15 @@ function CardItem(props) {
         duration: 1.4,
         ease: "power2.out",
         scrollTrigger: {
-          trigger: projectLink,
-          start: "top 90%",
+          trigger: overlay,
+          start: "top 30%",
         },
       }
     );
 
     // github link slide in animation
     gsap.fromTo(
-      gitLink,
+      gitLink.current,
       {
         autoAlpha: 0,
         x: "100vw",
@@ -44,7 +44,7 @@ function CardItem(props) {
         duration: 0.5,
         ease: "power2.out",
         scrollTrigger: {
-          trigger: gitLink,
+          trigger: overlay,
           start: "top 60%",
         },
       }
@@ -59,7 +59,7 @@ function CardItem(props) {
     });
 
     tl.fromTo(
-      img,
+      img.current,
       { scale: 1.6 },
       {
         scale: 1,
@@ -79,7 +79,7 @@ function CardItem(props) {
 
     // project description text fade in animation
     gsap.fromTo(
-      projectInfo,
+      projectInfo.current,
       {
         autoAlpha: 0,
         y: "15vh",
@@ -103,25 +103,16 @@ function CardItem(props) {
       <div className="card-item-container">
         <div className="img-container">
           <img
-            ref={(el) => {
-              img = el;
-            }}
+            ref={img}
             className="card-item-img"
             src={props.src}
             alt="project_img"
           />
-          <div
-            ref={(el) => {
-              overlay = el;
-            }}
-            className="img-overlay"
-          ></div>
+          <div ref={(el) => (overlay = el)} className="img-overlay"></div>
         </div>
         <div className="card-item-info">
           <a
-            ref={(el) => {
-              gitLink = el;
-            }}
+            ref={gitLink}
             className="card-item-git-link"
             target="_blank"
             rel="noopener noreferrer"
@@ -134,20 +125,13 @@ function CardItem(props) {
               alt="Arrow Icon"
             />
           </a>
-          <p
-            ref={(el) => {
-              projectInfo = el;
-            }}
-            className="card-item-text"
-          >
+          <p ref={projectInfo} className="card-item-text">
             {props.text}
           </p>
         </div>
         <div className="card-item-link-container">
           <a
-            ref={(el) => {
-              projectLink = el;
-            }}
+            ref={projectLink}
             className="card-item-link"
             target="_blank"
             rel="noopener noreferrer"

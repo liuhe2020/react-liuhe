@@ -43,7 +43,7 @@ function Contact() {
   const [statusMsg, setStatusMsg] = useState("Msg");
 
   const onSubmit = (data, e) => {
-    const statusMsg = document.querySelector(".status-msg");
+    const submitMsg = document.querySelector(".status-msg");
     console.log(data);
 
     // email.js
@@ -57,12 +57,12 @@ function Contact() {
       .then(
         (result) => {
           setStatusMsg("Message sent! Thank you.");
-          statusMsg.className = "status-msg success";
+          submitMsg.className = "status-msg success";
           e.target.reset();
         },
         (error) => {
           setStatusMsg("Failed to send message! Please try again.");
-          statusMsg.className = "status-msg failure";
+          submitMsg.className = "status-msg failure";
         }
       );
   };
