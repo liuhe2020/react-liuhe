@@ -22,7 +22,7 @@ const aboutMe = [
   {
     title: "Why web development?",
     text:
-      "Tech has been a life long passion of mine. In Auguest 2020, I decided to pursuit a career in web development. The biggest challenge was to learn to code from scratch and build a foundation to solve real world problems. I really enjoy learning new things every day and being able to implement them into my work. My long term goal is to become a full stack developer.",
+      "Tech has been a life long passion of mine. In August 2020, I decided to pursuit a career in web development. The biggest challenge was to learn to code from scratch and build a foundation to solve real world problems. I really enjoy learning new things every day and being able to implement them into my work. My long term goal is to become a full stack developer.",
   },
   {
     title: "What are my past experiences?",
