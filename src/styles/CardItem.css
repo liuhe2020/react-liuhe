@@ -48,7 +48,7 @@
 }
 
 .card-item-text {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   padding: 3rem 3.5rem;
 }
 
@@ -188,7 +188,6 @@
   }
 
   .card-item-text {
-    font-size: 1.5rem;
     padding: 10px 40px;
   }
 
