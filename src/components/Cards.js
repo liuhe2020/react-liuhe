@@ -4,6 +4,13 @@ import CardItem from "./CardItem";
 function Cards() {
   const projects = [
     {
+      title: "NAME BRAND",
+      text: "Name Brand is a demo ecommerce store with full fledged features, such as product search and sorting, user authentication and order history. Built with Next.JS for static generation of product category and individual product pages, styled with Tailwind CSS. The products database is powered by Firebase, and Stripe for handling payments.",
+      src: "img/name_brand.jpg",
+      url: "https://namebrand.vercel.app",
+      gitUrl: "https://github.com/liuhe2020/next-name-brand",
+    },
+    {
       title: "BINGEDIN MOVIE APP",
       text: "bINGEdIN is a movie app where users can view infos and watch trailers of trending movies over a variety of genres. It features a search functionality, and a watch list that stores user added movies in local storage. The app was built with React.js with styled components, utilising TMDB's APIs for movie data and YouTube for trailers.",
       src: "img/bingedin.jpg",

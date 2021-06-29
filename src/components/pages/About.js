@@ -16,23 +16,19 @@ const aboutMe = [
   },
   {
     title: "Where am I?",
-    text:
-      "I was born and raised in southern China. In 2003, I moved to London, UK and now I live in Sheffield, Yorkshire.",
+    text: "I was born and raised in southern China. In 2003, I moved to London, UK and now I live in Sheffield, Yorkshire.",
   },
   {
     title: "Why web development?",
-    text:
-      "Tech has been a life long passion of mine. In August 2020, I decided to pursuit a career in web development. The biggest challenge was to learn to code from scratch and build a foundation to solve real world problems. I really enjoy learning new things every day and being able to implement them into my work. My long term goal is to become a full stack developer.",
+    text: "Tech has been a life long passion of mine. In August 2020, I decided to pursuit a career in web development. The biggest challenge was to learn to code from scratch and build a foundation to solve real world problems. I really enjoy learning new things every day and being able to implement them into my work. My long term goal is to become a full stack developer.",
   },
   {
     title: "What are my past experiences?",
-    text:
-      "I have 10 years of industry experience working in business operations and customer service, also 7 of which as a freelance photographer expertised in portrait photography. These experiences help me find simple yet sophisticated solutions to complex problems in my designs.",
+    text: "I have 10 years of industry experience working in business operations and customer service, also 7 of which as a freelance photographer expertised in portrait photography. These experiences help me find simple yet sophisticated solutions to complex problems in my designs.",
   },
   {
     title: "What do I do in my free time?",
-    text:
-      "When I am not coding or pushing pixels. You will find me getting lost in the wilderness with my adorable dog Archie.",
+    text: "When I am not coding or pushing pixels. You will find me getting lost in the wilderness with my adorable dog Archie.",
   },
 ];
 
@@ -41,7 +37,7 @@ function About() {
 
   // framer motion page transition values
   const pageVariants = {
-    start: { opacity: 1 },
+    start: { opacity: 0 },
     in: { opacity: 1, transition: { duration: 1 } },
     out: { opacity: 0, transition: { duration: 1 } },
   };

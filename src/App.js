@@ -8,7 +8,7 @@ import Contact from "./components/pages/Contact";
 import About from "./components/pages/About";
 
 function App() {
-  // location hook to track page enter/exit for page transition animation, location.pathname key prevents animation re-run in the same page
+  // location hook to to get unique pathname key for children of AnimatePresence
   const location = useLocation();
 
   return (

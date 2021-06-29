@@ -13,7 +13,7 @@ function Contact() {
 
   // framer motion page transition values
   const pageVariants = {
-    start: { opacity: 1 },
+    start: { opacity: 0 },
     in: { opacity: 1, transition: { duration: 1 } },
     out: { opacity: 0, transition: { duration: 1 } },
   };
