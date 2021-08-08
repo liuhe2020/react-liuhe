@@ -41,7 +41,7 @@ function CardItem(props) {
       {
         autoAlpha: 1,
         x: 0,
-        duration: 0.5,
+        duration: 0.6,
         ease: "power2.out",
         scrollTrigger: {
           trigger: overlay,
@@ -63,7 +63,7 @@ function CardItem(props) {
       { scale: 1.6 },
       {
         scale: 1,
-        duration: 1.4,
+        duration: 1.2,
         ease: "power2.easeInOut",
       }
     ).fromTo(
@@ -71,9 +71,9 @@ function CardItem(props) {
       { width: "100%" },
       {
         width: "0%",
-        duration: 1.8,
+        duration: 1.5,
         ease: "power2.easeInOut",
-        delay: -1.4,
+        delay: -1.2,
       }
     );
 

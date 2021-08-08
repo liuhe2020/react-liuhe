@@ -5,7 +5,7 @@ function Cards() {
   const projects = [
     {
       title: "NAME BRAND",
-      text: "Name Brand is a demo ecommerce store with full fledged features, such as product search and sorting, user authentication and order history. Built with Next.JS for static generation of product category and individual product pages, styled with Tailwind CSS. The products database is powered by Firebase, and Stripe for handling payments.",
+      text: "Name Brand is a demo ecommerce store with full fledged features, such as searching and sorting products, user authentication and order history. Built with Next.JS for static generation of product category and individual product pages, styled with Tailwind CSS. State management with Redux toolkit. The products database is powered by Firebase, and Stripe for handling payments.",
       src: "img/name_brand.jpg",
       url: "https://namebrand.vercel.app",
       gitUrl: "https://github.com/liuhe2020/next-name-brand",

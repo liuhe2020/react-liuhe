@@ -106,10 +106,15 @@ function Banner2() {
           <div className="banner-items-container" ref={tbRef}>
             <img className="banner-item" src="/img/html.png" alt="html" />
             <img className="banner-item" src="/img/css.png" alt="css" />
-            <img className="banner-item" src="/img/sass.png" alt="sass" />
             <img className="banner-item" src="/img/js.png" alt="javascript" />
             <img className="banner-item" src="/img/react.png" alt="react" />
-            <img className="banner-item" src="/img/gsap.png" alt="gsap" />
+            <img className="banner-item" src="/img/next.png" alt="next" />
+            <img className="banner-item" src="/img/sass.png" alt="sass" />
+            <img
+              className="banner-item"
+              src="/img/tailwind.png"
+              alt="tailwind"
+            />
           </div>
         </div>
       </div>

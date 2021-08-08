@@ -4,6 +4,7 @@
   position: fixed;
   z-index: 5;
   mix-blend-mode: difference;
+  pointer-events: none;
 }
 
 .header-container {
@@ -17,6 +18,7 @@
 .logo {
   width: 100px;
   transform: translateY(5px);
+  pointer-events: auto;
 }
 
 .logo img {
@@ -28,6 +30,7 @@
   font-size: 2rem;
   cursor: pointer;
   color: #fff;
+  pointer-events: auto;
 }
 
 .nav-close {
@@ -35,6 +38,7 @@
   font-size: 2rem;
   cursor: pointer;
   color: #fff;
+  pointer-events: auto;
 }
 
 @media screen and (min-width: 1920px) {
