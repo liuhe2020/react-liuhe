@@ -106,7 +106,7 @@
   .footer-container {
     flex-direction: column;
     justify-content: flex-start;
-    height: 400px;
+    height: 420px;
   }
 
   .footer-left img {
@@ -146,5 +146,11 @@
     text-decoration: none;
     color: #ffffec;
     font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .footer-container {
+    height: 480px;
   }
 }

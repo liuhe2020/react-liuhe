@@ -36,13 +36,14 @@ function CardItem(props) {
       gitLink.current,
       {
         autoAlpha: 0,
-        x: "100vw",
+        x: "100%",
       },
       {
         autoAlpha: 1,
         x: 0,
-        duration: 0.6,
-        ease: "power2.out",
+        duration: 0.5,
+        delay: 0.5,
+        ease: "expo.in",
         scrollTrigger: {
           trigger: overlay,
           start: "top 60%",
