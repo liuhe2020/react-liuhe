@@ -1,7 +1,7 @@
 liuhe.dev is a web developer's portfolio website, showcasing websites and projects built and developed by Liu He.
 \
 \
-This site is built with React.js.
+Live site: https://www.liuhe.dev
 \
 \
 Libraries used:
