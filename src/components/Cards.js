@@ -18,7 +18,7 @@ function Cards() {
       gitUrl: 'https://github.com/liuhe2020/next-name-brand',
     },
     {
-      title: 'BINGEDIN',
+      title: 'BINGEDIN MOVIES',
       text: "bINGEdIN is a movie website where users can view infos and watch trailers of trending movies over a variety of genres. It features a search functionality, and a watch list that stores user added movies in local storage. The website was built with React.js with Styled Components, utilising TMDB's APIs for movie data and YouTube for the trailers.",
       src: 'img/bingedin.jpg',
       url: 'https://bingedin.netlify.app',
