@@ -16,15 +16,15 @@ const aboutMe = [
   },
   {
     title: "Where am I?",
-    text: "I was born and raised in southern China. In 2003, I moved to London, UK and now I live in Sheffield, Yorkshire.",
+    text: "I was born and raised in southern China. In 2003, I moved to London, UK and now I live in Exeter, Devon.",
   },
   {
     title: "Why web development?",
-    text: "Tech has been a life long passion of mine. In August 2020, I decided to pursuit a career in web development. The biggest challenge was to learn to code from scratch and build a foundation to solve real world problems. I really enjoy learning new things every day and being able to implement them into my work. My long term goal is to become a full stack developer.",
+    text: "Tech has been a life long passion of mine. In August 2020, I decided to teach myself how to code. The biggest challenge was to stay motivated and find solutions on my own even when sometimes it seemed impossible. I really enjoy learning new things every day and being able to implement them into my work. My long term goal is to become a full stack developer.",
   },
   {
     title: "What are my past experiences?",
-    text: "I have 10 years of industry experience working in business operations and customer service, also 7 of which as a freelance photographer expertised in portrait photography. These experiences help me find simple yet sophisticated solutions to complex problems in my designs.",
+    text: "I have 10 years of experience in business operations and customer service in the hospitality industry, also 7 of which as a freelance photographer expertised in portrait photography. These experiences help me find simple yet sophisticated solutions to complex problems in my designs.",
   },
   {
     title: "What do I do in my free time?",
