@@ -1,7 +1,7 @@
 import '../styles/Cards.css';
 import CardItem from './CardItem';
 
-function Cards() {
+export default function Cards() {
   const projects = [
     {
       title: 'PIN MY MAP',
@@ -58,5 +58,3 @@ function Cards() {
     </div>
   );
 }
-
-export default Cards;

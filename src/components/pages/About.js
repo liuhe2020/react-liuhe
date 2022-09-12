@@ -1,38 +1,38 @@
-import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "../../styles/About.css";
-import ScrollToTop from "../ScrollToTop";
-import Footer from "../Footer";
-import Overlay from "../Overlay";
+import { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import '../../styles/About.css';
+import ScrollToTop from '../ScrollToTop';
+import Footer from '../Footer';
+import Overlay from '../Overlay';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const aboutMe = [
   {
-    title: "Who am I?",
+    title: 'Who am I?',
     text: "My name is Liu He and I'm a front-end web developer.",
   },
   {
-    title: "Where am I?",
-    text: "I was born and raised in southern China. In 2003, I moved to London, UK and now I live in Exeter, Devon.",
+    title: 'Where am I?',
+    text: 'I was born and raised in southern China. In 2003, I moved to London, UK and now I live in Exeter, Devon.',
   },
   {
-    title: "Why web development?",
-    text: "Tech has been a life long passion of mine. In August 2020, I decided to teach myself how to code. The biggest challenge was to stay motivated and find solutions on my own even when sometimes it seemed impossible. I really enjoy learning new things every day and being able to implement them into my work. My long term goal is to become a full stack developer.",
+    title: 'Why web development?',
+    text: 'Tech has been a life long passion of mine. In August 2020, I decided to teach myself how to code. The biggest challenge was to stay motivated and find solutions on my own even when sometimes it seemed impossible. I really enjoy learning new things every day and being able to implement them into my work. My long term goal is to become a full stack developer.',
   },
   {
-    title: "What are my past experiences?",
-    text: "I have 10 years of experience in business operations and customer service in the hospitality industry, also 7 of which as a freelance photographer expertised in portrait photography. These experiences help me find simple yet sophisticated solutions to complex problems in my designs.",
+    title: 'What are my past experiences?',
+    text: 'I have 10 years of experience in business operations and customer service in the hospitality industry, also 7 of which as a freelance photographer expertised in portrait photography. These experiences help me find simple yet sophisticated solutions to complex problems in my designs.',
   },
   {
-    title: "What do I do in my free time?",
-    text: "When I am not coding or pushing pixels. You will find me getting lost in the wilderness with my adorable dog Archie.",
+    title: 'What do I do in my free time?',
+    text: 'When I am not coding or pushing pixels. You will find me getting lost in the wilderness with my adorable dog Archie.',
   },
 ];
 
-function About() {
+export default function About() {
   ScrollToTop();
 
   // framer motion page transition values
@@ -54,21 +54,21 @@ function About() {
 
   useEffect(() => {
     // fix flashing animated titles on page load
-    gsap.to(".top-container", { css: { visibility: "visible" } });
+    gsap.to('.top-container', { css: { visibility: 'visible' } });
 
     // gsap opening animation on page load
-    gsap.from(".about-titles h1", 2, {
+    gsap.from('.about-titles h1', 2, {
       y: 480,
-      ease: "power4.out",
+      ease: 'power4.out',
       delay: 0.6,
       skewY: 5,
       stagger: { amount: 0.5 },
     });
 
-    gsap.to(".overlay", 2, {
-      y: "-100vh",
+    gsap.to('.overlay', 2, {
+      y: '-100vh',
       delay: 2,
-      ease: "expo.inOut",
+      ease: 'expo.inOut',
     });
 
     // text fade in animation on scroll with scrolltrigger
@@ -77,17 +77,17 @@ function About() {
         el,
         {
           autoAlpha: 0,
-          y: "15vh",
+          y: '15vh',
         },
         {
           duration: 1,
           autoAlpha: 1,
           y: 0,
-          ease: "power4.out",
+          ease: 'power4.out',
           stagger: { amount: 0.3 },
           scrollTrigger: {
             trigger: el,
-            start: "top 80%",
+            start: 'top 80%',
           },
         }
       );
@@ -96,26 +96,26 @@ function About() {
 
   return (
     <motion.div
-      className="page"
+      className='page'
       variants={pageVariants}
-      initial="start"
-      animate="in"
-      exit="out"
+      initial='start'
+      animate='in'
+      exit='out'
     >
-      <div className="about-container">
-        <div className="top-container">
-          <div className="about-titles">
-            <h1 className="title1">WEB DEVELOPER</h1>
-            <h1 className="title2">PHOTOGRAPHER</h1>
-            <h1 className="title3">DOG LOVER</h1>
+      <div className='about-container'>
+        <div className='top-container'>
+          <div className='about-titles'>
+            <h1 className='title1'>WEB DEVELOPER</h1>
+            <h1 className='title2'>PHOTOGRAPHER</h1>
+            <h1 className='title3'>DOG LOVER</h1>
           </div>
-          <img className="about-img1" src="/img/liuhe.png" alt="liu_he" />
-          <img className="about-img2" src="/img/archie3.png" alt="pomeranian" />
+          <img className='about-img1' src='/img/liuhe.png' alt='liu_he' />
+          <img className='about-img2' src='/img/archie3.png' alt='pomeranian' />
         </div>
-        <div className="btm-container">
+        <div className='btm-container'>
           {aboutMe.map(({ title, text }) => {
             return (
-              <div className="info-container" key={title} ref={addToRefs}>
+              <div className='info-container' key={title} ref={addToRefs}>
                 <h3>{title}</h3>
                 <p>{text}</p>
               </div>
@@ -128,5 +128,3 @@ function About() {
     </motion.div>
   );
 }
-
-export default About;

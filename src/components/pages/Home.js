@@ -1,11 +1,11 @@
-import { motion } from "framer-motion";
-import HeroSection from "../HeroSection";
-import Banner from "../Banner";
-import Cards from "../Cards";
-import Banner2 from "../Banner2";
-import Footer from "../Footer";
+import { motion } from 'framer-motion';
+import HeroSection from '../HeroSection';
+import Banner from '../Banner';
+import Cards from '../Cards';
+import Banner2 from '../Banner2';
+import Footer from '../Footer';
 
-function Home() {
+export default function Home() {
   // framer motion page transition values
   const pageVariants = {
     start: { opacity: 0 },
@@ -15,12 +15,12 @@ function Home() {
 
   return (
     <motion.div
-      className="page"
-      id="home"
+      className='page'
+      id='home'
       variants={pageVariants}
-      initial="start"
-      animate="in"
-      exit="out"
+      initial='start'
+      animate='in'
+      exit='out'
     >
       <HeroSection />
       <Banner />
@@ -30,5 +30,3 @@ function Home() {
     </motion.div>
   );
 }
-
-export default Home;

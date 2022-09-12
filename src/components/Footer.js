@@ -1,7 +1,10 @@
 import { HashLink } from 'react-router-hash-link';
 import '../styles/Footer.css';
 
-function Footer() {
+export default function Footer() {
+  const today = new Date();
+  const year = today.getFullYear();
+
   return (
     <div className='footer'>
       <div className='footer-container'>
@@ -51,9 +54,9 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className='copyright'>© 2022 Liu He .dev. All Rights Reserved.</div>
+      <div className='copyright'>
+        © {year} Liu He .dev. All Rights Reserved.
+      </div>
     </div>
   );
 }
-
-export default Footer;

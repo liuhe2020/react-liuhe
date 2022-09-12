@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from "react";
-import "../styles/CardItem.css";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useEffect, useRef } from 'react';
+import '../styles/CardItem.css';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
-function CardItem(props) {
+export default function CardItem(props) {
   const projectLink = useRef(null);
   const gitLink = useRef(null);
   const img = useRef(null);
@@ -17,16 +17,16 @@ function CardItem(props) {
       projectLink.current,
       {
         autoAlpha: 0,
-        x: "-15vw",
+        x: '-15vw',
       },
       {
         autoAlpha: 1,
         x: 0,
         duration: 1.4,
-        ease: "power2.out",
+        ease: 'power2.out',
         scrollTrigger: {
           trigger: overlay,
-          start: "top 30%",
+          start: 'top 30%',
         },
       }
     );
@@ -36,17 +36,17 @@ function CardItem(props) {
       gitLink.current,
       {
         autoAlpha: 0,
-        x: "100%",
+        x: '100%',
       },
       {
         autoAlpha: 1,
         x: 0,
         duration: 0.5,
         delay: 0.5,
-        ease: "expo.in",
+        ease: 'expo.in',
         scrollTrigger: {
           trigger: overlay,
-          start: "top 60%",
+          start: 'top 60%',
         },
       }
     );
@@ -55,7 +55,7 @@ function CardItem(props) {
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: overlay,
-        start: "top 60%",
+        start: 'top 60%',
       },
     });
 
@@ -65,15 +65,15 @@ function CardItem(props) {
       {
         scale: 1,
         duration: 1.2,
-        ease: "power2.easeInOut",
+        ease: 'power2.easeInOut',
       }
     ).fromTo(
       overlay,
-      { width: "100%" },
+      { width: '100%' },
       {
-        width: "0%",
+        width: '0%',
         duration: 1.5,
-        ease: "power2.easeInOut",
+        ease: 'power2.easeInOut',
         delay: -1.2,
       }
     );
@@ -83,72 +83,70 @@ function CardItem(props) {
       projectInfo.current,
       {
         autoAlpha: 0,
-        y: "15vh",
+        y: '15vh',
       },
       {
         duration: 1,
         delay: 0.6,
         autoAlpha: 1,
         y: 0,
-        ease: "power2.out",
+        ease: 'power2.out',
         scrollTrigger: {
           trigger: overlay,
-          start: "top 60%",
+          start: 'top 60%',
         },
       }
     );
   }, []);
 
   return (
-    <div className="card" id="card">
-      <div className="card-item-container">
-        <div className="img-container">
+    <div className='card' id='card'>
+      <div className='card-item-container'>
+        <div className='img-container'>
           <img
             ref={img}
-            className="card-item-img"
+            className='card-item-img'
             src={props.src}
-            alt="project_img"
+            alt='project_img'
           />
-          <div ref={(el) => (overlay = el)} className="img-overlay"></div>
+          <div ref={(el) => (overlay = el)} className='img-overlay'></div>
         </div>
-        <div className="card-item-info">
+        <div className='card-item-info'>
           <a
             ref={gitLink}
-            className="card-item-git-link"
-            target="_blank"
-            rel="noopener noreferrer"
+            className='card-item-git-link'
+            target='_blank'
+            rel='noopener noreferrer'
             href={props.gitUrl}
           >
-            <h4 className="card-item-git">GitHub</h4>
+            <h4 className='card-item-git'>GitHub</h4>
             <img
-              className="card-item-arrow-left"
-              src="../svg/arrow_left.png"
-              alt="Arrow Icon"
+              className='card-item-arrow-left'
+              src='../svg/arrow_left.png'
+              alt='Arrow Icon'
             />
           </a>
-          <p ref={projectInfo} className="card-item-text">
+          <p ref={projectInfo} className='card-item-text'>
             {props.text}
           </p>
         </div>
-        <div className="card-item-link-container">
+        <div className='card-item-link-container'>
           <a
             ref={projectLink}
-            className="card-item-link"
-            target="_blank"
-            rel="noopener noreferrer"
+            className='card-item-link'
+            target='_blank'
+            rel='noopener noreferrer'
             href={props.url}
           >
             <img
-              className="card-item-arrow-right"
-              src="../svg/arrow_right.png"
-              alt="Arrow Icon"
+              className='card-item-arrow-right'
+              src='../svg/arrow_right.png'
+              alt='Arrow Icon'
             />
-            <h3 className="card-item-title">{props.title}</h3>
+            <h3 className='card-item-title'>{props.title}</h3>
           </a>
         </div>
       </div>
     </div>
   );
 }
-
-export default CardItem;
