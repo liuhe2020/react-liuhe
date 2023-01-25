@@ -3,7 +3,6 @@ import HeroSection from '../HeroSection';
 import Banner from '../Banner';
 import Cards from '../Cards';
 import Banner2 from '../Banner2';
-import Footer from '../Footer';
 
 export default function Home() {
   // framer motion page transition values

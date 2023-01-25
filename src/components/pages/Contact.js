@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import '../../styles/Contact.css';
 import ScrollToTop from '../ScrollToTop';
-import Footer from '../Footer';
 import Overlay from '../Overlay';
 
 export default function Contact() {
