@@ -4,7 +4,6 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import '../../styles/About.css';
 import ScrollToTop from '../ScrollToTop';
-import Footer from '../Footer';
 import Overlay from '../Overlay';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -12,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 const aboutMe = [
   {
     title: 'Who am I?',
-    text: "My name is Liu He and I'm a front-end web developer.",
+    text: "My name is Liu He and I'm a web developer.",
   },
   {
     title: 'Where am I?',
@@ -20,15 +19,15 @@ const aboutMe = [
   },
   {
     title: 'Why web development?',
-    text: 'Tech has been a life long passion of mine. In August 2020, I decided to teach myself how to code. The biggest challenge was to stay motivated and find solutions on my own even when sometimes it seemed impossible. I really enjoy learning new things every day and being able to implement them into my work. My long term goal is to become a full stack developer.',
+    text: 'Tech has been a life long passion of mine. In August 2020, I decided to teach myself how to code. The biggest challenge was to stay motivated and find solutions on my own even when sometimes it seemed impossible. I really enjoy learning new things every day and being able to implement them into my work. I now work in a team of like-minded web developers and continue to broaden my skill set.',
   },
   {
-    title: 'What are my past experiences?',
-    text: 'I have 10 years of experience in business operations and customer service in the hospitality industry, also 7 of which as a freelance photographer expertised in portrait photography. These experiences help me find simple yet sophisticated solutions to complex problems in my designs.',
+    title: 'What are my past experiences prior to being a web developer?',
+    text: 'I have 10 years of experience in business operations and customer service in the hospitality industry, also 7 of which as a freelance photographer expertised in portrait photography. These experiences not only enriched me professionally and personally but also provided me with transferable skills in my current endeavour.',
   },
   {
     title: 'What do I do in my free time?',
-    text: 'When I am not coding or pushing pixels. You will find me getting lost in the wilderness with my adorable dog Archie.',
+    text: 'When I am not coding or pushing pixels. You will find me getting lost in the wilderness with my adorable dog Tofu.',
   },
 ];
 
@@ -123,7 +122,6 @@ export default function About() {
           })}
         </div>
       </div>
-      <Footer />
       <Overlay />
     </motion.div>
   );

@@ -169,7 +169,6 @@ export default function Contact() {
           <p className='status-msg'>{statusMsg}</p>
         </form>
       </div>
-      <Footer />
       <Overlay />
     </motion.div>
   );

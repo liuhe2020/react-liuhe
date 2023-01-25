@@ -6,6 +6,7 @@ import Nav from './components/Nav';
 import Home from './components/pages/Home';
 import Contact from './components/pages/Contact';
 import About from './components/pages/About';
+import Footer from './components/Footer';
 
 export default function App() {
   // location hook to to get unique pathname key for children of AnimatePresence
@@ -21,6 +22,7 @@ export default function App() {
           <Route path='/contact' component={Contact} />
           <Route path='/' component={Home} />
         </Switch>
+        <Footer />
       </AnimatePresence>
     </>
   );
