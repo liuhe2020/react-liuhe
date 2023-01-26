@@ -12,7 +12,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 150px;
+  margin: 0 3.5rem;
 }
 
 .logo {
@@ -43,7 +43,7 @@
 
 @media screen and (min-width: 1920px) {
   .header-container {
-    margin: 0 9vw;
+    margin: 0 3vw;
   }
 
   .logo {

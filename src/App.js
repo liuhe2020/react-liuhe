@@ -22,8 +22,8 @@ export default function App() {
           <Route path='/contact' component={Contact} />
           <Route path='/' component={Home} />
         </Switch>
-        <Footer />
       </AnimatePresence>
+      <Footer />
     </>
   );
 }
