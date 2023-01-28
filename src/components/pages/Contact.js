@@ -6,6 +6,7 @@ import gsap from 'gsap';
 import '../../styles/Contact.css';
 import ScrollToTop from '../ScrollToTop';
 import Overlay from '../Overlay';
+import Footer from '../Footer';
 
 export default function Contact() {
   ScrollToTop();
@@ -168,6 +169,7 @@ export default function Contact() {
           <p className='status-msg'>{statusMsg}</p>
         </form>
       </div>
+      <Footer />
       <Overlay />
     </motion.div>
   );

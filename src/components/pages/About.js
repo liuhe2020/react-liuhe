@@ -5,6 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import '../../styles/About.css';
 import ScrollToTop from '../ScrollToTop';
 import Overlay from '../Overlay';
+import Footer from '../Footer';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,6 +34,10 @@ const aboutMe = [
 
 export default function About() {
   ScrollToTop();
+
+  const { innerWidth: width, innerHeight: height } = window;
+
+  console.log(width);
 
   // framer motion page transition values
   const pageVariants = {
@@ -122,6 +127,7 @@ export default function About() {
           })}
         </div>
       </div>
+      <Footer />
       <Overlay />
     </motion.div>
   );
