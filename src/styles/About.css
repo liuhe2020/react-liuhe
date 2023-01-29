@@ -26,15 +26,17 @@
 
 .title1 {
   font-size: 5.5vw;
+  line-height: 6vw;
 }
 
 .title2 {
   font-size: 4.5vw;
+  line-height: 5vw;
 }
 
 .title3 {
-  line-height: 4vw;
   font-size: 3.5vw;
+  line-height: 5vw;
 }
 
 .top-container img {
@@ -87,20 +89,21 @@
   .about-titles {
     top: 25%;
     right: 10%;
-    line-height: 5rem;
   }
 
   .title1 {
     font-size: 4.5rem;
+    line-height: 4.5rem;
   }
 
   .title2 {
     font-size: 4rem;
+    line-height: 4.5rem;
   }
 
   .title3 {
-    line-height: 4rem;
     font-size: 3.5rem;
+    line-height: 3.8rem;
   }
 
   .about-img1 {
@@ -130,22 +133,23 @@
 
 @media screen and (max-width: 758px) {
   .about-titles {
-    top: 30%;
+    top: 25%;
     right: 10%;
-    line-height: 3.5rem;
   }
 
   .title1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
+    line-height: 3.8rem;
   }
 
   .title2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
+    line-height: 3.8rem;
   }
 
   .title3 {
-    line-height: 2.5rem;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    line-height: 3rem;
   }
 
   .about-img1 {
@@ -172,5 +176,18 @@
   .info-container p {
     font-size: 1.3rem;
     margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .about-titles {
+    right: 0;
+    left: 0;
+    align-items: flex-start;
+    padding: 0 2rem;
+  }
+
+  .about-titles h1 {
+    word-break: break-word;
   }
 }

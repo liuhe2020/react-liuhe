@@ -1,6 +1,6 @@
 .nav {
-  height: 20vw;
-  top: -20vw;
+  height: 320px;
+  top: -320px;
   width: 100%;
   position: fixed;
   z-index: 4;
@@ -10,7 +10,7 @@
 .nav-container {
   display: flex;
   flex-direction: column;
-  padding: 7rem 20vw 0;
+  padding: 7rem 20vw 0 20vw;
 }
 
 .nav-links {
@@ -73,6 +73,11 @@
 }
 
 @media screen and (min-width: 1600px) {
+  .nav {
+    height: 20vw;
+    top: -20vw;
+  }
+
   .nav-container {
     padding: 7vw 20vw;
   }
