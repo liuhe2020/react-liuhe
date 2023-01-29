@@ -151,6 +151,20 @@
 
 @media screen and (max-width: 410px) {
   .footer-container {
-    height: 480px;
+    height: 540px;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-email,
+  .contact-phone {
+    text-align: center;
+  }
+
+  .contact-email {
+    padding-bottom: 1rem;
   }
 }
