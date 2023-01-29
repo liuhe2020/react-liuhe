@@ -1,23 +1,24 @@
+import { useEffect, useState, useCallback } from 'react';
+
 const getWindowDimensions = () => {
   const { innerWidth: width } = window;
   return width;
 };
 
-const useWindowSize = () => {
+const useViewport = () => {
   const [viewportWidth, setViewportWidth] = useState(getWindowDimensions());
+  const handleResize = useCallback(
+    () => setViewportWidth(getWindowDimensions()),
+    []
+  );
 
   useEffect(() => {
-    function handleResize() {
-      setWindowDimensions(getWindowDimensions());
-    }
+    window.addEventListener('resize', handleResize);
 
-    const debouncedHandleResize = debounce(handleResize, delay);
-    window.addEventListener('resize', debouncedHandleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
-    return () => window.removeEventListener('resize', debouncedHandleResize);
-  }, [delay]);
-
-  return windowDimensions;
+  return viewportWidth;
 };
 
-export default useWindowSize;
+export default useViewport;

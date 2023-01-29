@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import '../../styles/About.css';
-import ScrollToTop from '../ScrollToTop';
+import ScrollToTop from '../../utils/ScrollToTop';
 import Overlay from '../Overlay';
 import Footer from '../Footer';
 
@@ -34,10 +34,6 @@ const aboutMe = [
 
 export default function About() {
   ScrollToTop();
-
-  const { innerWidth: width, innerHeight: height } = window;
-
-  console.log(width);
 
   // framer motion page transition values
   const pageVariants = {

@@ -5,23 +5,34 @@ import { HashLink } from 'react-router-hash-link';
 import gsap from 'gsap';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { FaRegArrowAltCircleUp } from 'react-icons/fa';
+import useViewport from '../utils/useViewport';
 import '../styles/Header.css';
 
-function Header({ history }) {
-  const [menuSate, setMenuState] = useState({ menuOpen: false });
+const Header = ({ history }) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const viewportWidth = useViewport();
+
+  const menuHeight = (negative) => {
+    if (viewportWidth < 1600) {
+      if (negative) return '-320px';
+      return '320px';
+    }
+    if (negative) return '-20vw';
+    return '20vw';
+  };
 
   useEffect(() => {
     // set menu to close after navigation based on listening to route change
     history.listen(() => {
-      setMenuState({ menuOpen: false });
+      setIsMenuOpen(false);
     });
 
     // menu open animation based on change of state, navbar is hidden on top of the page and slides down 320px when toggled
     // the rest of the body slides down at the same time for 317px
     // to prevent white line flashing between the navbar and the page body during animation
-    if (menuSate.menuOpen === true) {
+    if (isMenuOpen) {
       gsap.to('.nav', { css: { top: '0' }, duration: 1, ease: 'expo.inOut' });
-      gsap.to('.page', { y: '20vw', duration: 1, ease: 'expo.inOut' });
+      gsap.to('.page', { y: menuHeight(), duration: 1, ease: 'expo.inOut' });
       gsap.to('.nav-toggle', { css: { display: 'none' } });
       gsap.to('.nav-close', { css: { display: 'block' }, delay: 0.5 });
       gsap.fromTo(
@@ -31,7 +42,7 @@ function Header({ history }) {
       );
     } else {
       gsap.to('.nav', {
-        css: { top: '-20vw' },
+        css: { top: menuHeight('negative') },
         duration: 1,
         ease: 'expo.inOut',
       });
@@ -54,15 +65,15 @@ function Header({ history }) {
         </HashLink>
         <GiHamburgerMenu
           className='nav-toggle'
-          onClick={() => setMenuState({ menuOpen: true })}
+          onClick={() => setIsMenuOpen(true)}
         />
         <FaRegArrowAltCircleUp
           className='nav-close'
-          onClick={() => setMenuState({ menuOpen: false })}
+          onClick={() => setIsMenuOpen(false)}
         />
       </div>
     </div>
   );
-}
+};
 
 export default withRouter(Header);

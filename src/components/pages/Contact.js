@@ -4,7 +4,7 @@ import emailjs from 'emailjs-com';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import '../../styles/Contact.css';
-import ScrollToTop from '../ScrollToTop';
+import ScrollToTop from '../../utils/ScrollToTop';
 import Overlay from '../Overlay';
 import Footer from '../Footer';
 
