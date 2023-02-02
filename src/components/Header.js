@@ -35,11 +35,7 @@ const Header = ({ history }) => {
       gsap.to('.page', { y: menuHeight(), duration: 1, ease: 'expo.inOut' });
       gsap.to('.nav-toggle', { css: { display: 'none' } });
       gsap.to('.nav-close', { css: { display: 'block' }, delay: 0.5 });
-      gsap.fromTo(
-        '.nav-container',
-        { opacity: 0 },
-        { opacity: 1, duration: 0.5, delay: 0.5 }
-      );
+      gsap.fromTo('.nav-container', { opacity: 0 }, { opacity: 1, duration: 0.5, delay: 0.5 });
     } else {
       gsap.to('.nav', {
         css: { top: menuHeight('negative') },
@@ -49,11 +45,7 @@ const Header = ({ history }) => {
       gsap.to('.page', { y: 0, duration: 1, ease: 'expo.inOut' });
       gsap.to('.nav-toggle', { css: { display: '' }, delay: 0.5 });
       gsap.to('.nav-close', { css: { display: 'none' } });
-      gsap.fromTo(
-        '.nav-container',
-        { opacity: 1 },
-        { opacity: 0, duration: 0.5 }
-      );
+      gsap.fromTo('.nav-container', { opacity: 1 }, { opacity: 0, duration: 0.5 });
     }
   });
 
@@ -63,14 +55,8 @@ const Header = ({ history }) => {
         <HashLink to='/#home' smooth className='logo'>
           <img src='/svg/liu_he_logo.png' alt='liu_he_logo' />
         </HashLink>
-        <GiHamburgerMenu
-          className='nav-toggle'
-          onClick={() => setIsMenuOpen(true)}
-        />
-        <FaRegArrowAltCircleUp
-          className='nav-close'
-          onClick={() => setIsMenuOpen(false)}
-        />
+        <GiHamburgerMenu className='nav-toggle' onClick={() => setIsMenuOpen(true)} />
+        <FaRegArrowAltCircleUp className='nav-close' onClick={() => setIsMenuOpen(false)} />
       </div>
     </div>
   );

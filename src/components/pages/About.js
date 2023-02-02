@@ -1,11 +1,10 @@
 import { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import '../../styles/About.css';
 import ScrollToTop from '../../utils/ScrollToTop';
 import Footer from '../Footer';
-import PageTransition from '../PageTransition';
+import { EntryTransition, ExitTransition } from '../PageTransition';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -88,7 +87,7 @@ export default function About() {
   }, []);
 
   return (
-    <motion.div className='page'>
+    <ExitTransition>
       <div className='about-container'>
         <div className='top-container'>
           <div className='about-titles'>
@@ -111,7 +110,7 @@ export default function About() {
         </div>
       </div>
       <Footer />
-      <PageTransition />
-    </motion.div>
+      <EntryTransition />
+    </ExitTransition>
   );
 }

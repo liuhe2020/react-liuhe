@@ -1,31 +1,27 @@
 @font-face {
   font-family: 'Calibre';
-  src: local('Calibre Black'), local('Calibre-Black'),
-    url('../fonts/Calibre-Black.ttf') format('truetype');
+  src: local('Calibre Black'), local('Calibre-Black'), url('../fonts/Calibre-Black.ttf') format('truetype');
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Calibre';
-  src: local('Calibre Bold'), local('Calibre-Bold'),
-    url('../fonts/Calibre-Bold.ttf') format('truetype');
+  src: local('Calibre Bold'), local('Calibre-Bold'), url('../fonts/Calibre-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Calibre';
-  src: local('Calibre Semibold'), local('Calibre-Semibold'),
-    url('../fonts/Calibre-Semibold.ttf') format('truetype');
+  src: local('Calibre Semibold'), local('Calibre-Semibold'), url('../fonts/Calibre-Semibold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Calibre';
-  src: local('Calibre'), local('Calibre-Regular'),
-    url('../fonts/Calibre-Regular.ttf') format('truetype');
+  src: local('Calibre'), local('Calibre-Regular'), url('../fonts/Calibre-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -52,3 +48,7 @@
   z-index: 1;
   top: 0vh;
 }
+
+/* body {
+  overflow: hidden;
+} */

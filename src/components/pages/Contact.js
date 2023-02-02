@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import emailjs from 'emailjs-com';
-import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import '../../styles/Contact.css';
 import ScrollToTop from '../../utils/ScrollToTop';
 import Footer from '../Footer';
-import PageTransition from '../PageTransition';
+import { EntryTransition, ExitTransition } from '../PageTransition';
 
 export default function Contact() {
   ScrollToTop();
@@ -34,41 +33,28 @@ export default function Contact() {
     console.log(data);
 
     // email.js
-    emailjs
-      .sendForm(
-        'liuhe_yahoo',
-        'template_liuhe',
-        '#form',
-        'user_QXaR2CMF0bg5jBJRseDBl'
-      )
-      .then(
-        (result) => {
-          setStatusMsg('Message sent! Thank you.');
-          submitMsg.className = 'status-msg success';
-          e.target.reset();
-        },
-        (error) => {
-          setStatusMsg('Failed to send message! Please try again.');
-          submitMsg.className = 'status-msg failure';
-        }
-      );
+    emailjs.sendForm('liuhe_yahoo', 'template_liuhe', '#form', 'user_QXaR2CMF0bg5jBJRseDBl').then(
+      (result) => {
+        setStatusMsg('Message sent! Thank you.');
+        submitMsg.className = 'status-msg success';
+        e.target.reset();
+      },
+      (error) => {
+        setStatusMsg('Failed to send message! Please try again.');
+        submitMsg.className = 'status-msg failure';
+      }
+    );
   };
 
   return (
-    <motion.div className='page'>
+    <ExitTransition>
       <div className='contact-container'>
         <div className='contact-title-container'>
           <div className='contact-title-inner'>
             <h1 className='contact-title'>GET IN TOUCH</h1>
           </div>
         </div>
-        <form
-          noValidate
-          className='form'
-          id='form'
-          name='contact'
-          onSubmit={handleSubmit(onSubmit)}
-        >
+        <form noValidate className='form' id='form' name='contact' onSubmit={handleSubmit(onSubmit)}>
           <input type='hidden' name='form-name' value='contact' />
           <div className='form-top'>
             <div className='form-top-left'>
@@ -88,23 +74,9 @@ export default function Contact() {
                   },
                 })}
               />
-              {errors.name && (
-                <p className='form-error'>{errors.name.message}</p>
-              )}
-              <input
-                type='text'
-                className='input-field'
-                name='company'
-                placeholder='Company'
-                ref={register}
-              />
-              <input
-                type='tel'
-                className='input-field'
-                name='phone'
-                placeholder='Phone'
-                ref={register}
-              />
+              {errors.name && <p className='form-error'>{errors.name.message}</p>}
+              <input type='text' className='input-field' name='company' placeholder='Company' ref={register} />
+              <input type='tel' className='input-field' name='phone' placeholder='Phone' ref={register} />
               <input
                 type='email'
                 className='input-field'
@@ -121,9 +93,7 @@ export default function Contact() {
                   },
                 })}
               />
-              {errors.email && (
-                <p className='form-error'>{errors.email.message}</p>
-              )}
+              {errors.email && <p className='form-error'>{errors.email.message}</p>}
             </div>
             <div className='form-top-right'>
               <textarea
@@ -151,7 +121,7 @@ export default function Contact() {
         </form>
       </div>
       <Footer />
-      <PageTransition />
-    </motion.div>
+      <EntryTransition />
+    </ExitTransition>
   );
 }

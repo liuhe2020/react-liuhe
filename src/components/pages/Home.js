@@ -1,20 +1,19 @@
-import { motion } from 'framer-motion';
 import HeroSection from '../HeroSection';
 import Banner from '../Banner';
 import Cards from '../Cards';
 import Banner2 from '../Banner2';
 import Footer from '../Footer';
-import PageTransition from '../PageTransition';
+import { EntryTransition, ExitTransition } from '../PageTransition';
 
 export default function Home() {
   return (
-    <motion.div className='page'>
+    <ExitTransition>
       <HeroSection />
       <Banner />
       <Cards />
       <Banner2 />
       <Footer />
-      <PageTransition />
-    </motion.div>
+      <EntryTransition />
+    </ExitTransition>
   );
 }

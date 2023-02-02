@@ -109,22 +109,15 @@ export default function Banner2() {
             </div>
           </div>
           <h2 className='banner2-topright'>
-            It takes less than a second for users to form a first impression
-            about your website. That's why it is crucial to have a visually
-            impactful design, which invites users to explore more about your
-            business. My job is to make sure your website is built to do that.
+            It takes less than a second for users to form a first impression about your website. That's why it is crucial to have a visually impactful design,
+            which invites users to explore more about your business. My job is to make sure your website is built to do that.
           </h2>
         </div>
         <div className='banner2-btm'>
           <h1>MY TOOLBOX</h1>
           <div className='banner-items-container' ref={tbRef}>
             {toolbox.map((tool) => (
-              <img
-                className='banner-item'
-                key={tool.alt}
-                src={tool.src}
-                alt={tool.alt}
-              />
+              <img className='banner-item' key={tool.alt} src={tool.src} alt={tool.alt} />
             ))}
           </div>
         </div>
