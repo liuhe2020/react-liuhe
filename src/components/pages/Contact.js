@@ -5,18 +5,11 @@ import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import '../../styles/Contact.css';
 import ScrollToTop from '../../utils/ScrollToTop';
-import Overlay from '../Overlay';
 import Footer from '../Footer';
+import PageTransition from '../PageTransition';
 
 export default function Contact() {
   ScrollToTop();
-
-  // framer motion page transition values
-  const pageVariants = {
-    start: { opacity: 0 },
-    in: { opacity: 1, transition: { duration: 1 } },
-    out: { opacity: 0, transition: { duration: 1 } },
-  };
 
   useEffect(() => {
     // fix flashing animated titles on page load
@@ -29,12 +22,6 @@ export default function Contact() {
       delay: 0.6,
       skewY: 4,
       stagger: { amount: 0.5 },
-    });
-
-    gsap.to('.overlay', 2, {
-      y: '-100vh',
-      delay: 2,
-      ease: 'expo.inOut',
     });
   }, []);
 
@@ -68,13 +55,7 @@ export default function Contact() {
   };
 
   return (
-    <motion.div
-      className='page'
-      variants={pageVariants}
-      initial='start'
-      animate='in'
-      exit='out'
-    >
+    <motion.div className='page'>
       <div className='contact-container'>
         <div className='contact-title-container'>
           <div className='contact-title-inner'>
@@ -170,7 +151,7 @@ export default function Contact() {
         </form>
       </div>
       <Footer />
-      <Overlay />
+      <PageTransition />
     </motion.div>
   );
 }

@@ -4,8 +4,8 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import '../../styles/About.css';
 import ScrollToTop from '../../utils/ScrollToTop';
-import Overlay from '../Overlay';
 import Footer from '../Footer';
+import PageTransition from '../PageTransition';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -35,13 +35,6 @@ const aboutMe = [
 export default function About() {
   ScrollToTop();
 
-  // framer motion page transition values
-  const pageVariants = {
-    start: { opacity: 0 },
-    in: { opacity: 1, transition: { duration: 1 } },
-    out: { opacity: 0, transition: { duration: 1 } },
-  };
-
   // refs array for gsap fade in
   const fadeInRefs = useRef([]);
   fadeInRefs.current = [];
@@ -65,11 +58,11 @@ export default function About() {
       stagger: { amount: 0.5 },
     });
 
-    gsap.to('.overlay', 2, {
-      y: '-100vh',
-      delay: 2,
-      ease: 'expo.inOut',
-    });
+    // gsap.to('.overlay', 2, {
+    //   y: '-100vh',
+    //   delay: 2,
+    //   ease: 'expo.inOut',
+    // });
 
     // text fade in animation on scroll with scrolltrigger
     fadeInRefs.current.forEach((el) => {
@@ -95,13 +88,7 @@ export default function About() {
   }, []);
 
   return (
-    <motion.div
-      className='page'
-      variants={pageVariants}
-      initial='start'
-      animate='in'
-      exit='out'
-    >
+    <motion.div className='page'>
       <div className='about-container'>
         <div className='top-container'>
           <div className='about-titles'>
@@ -124,7 +111,7 @@ export default function About() {
         </div>
       </div>
       <Footer />
-      <Overlay />
+      <PageTransition />
     </motion.div>
   );
 }

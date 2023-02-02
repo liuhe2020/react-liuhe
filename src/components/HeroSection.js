@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import gsap from 'gsap';
 import '../styles/HeroSection.css';
-import Overlay from './Overlay';
 
 export default function HeroSection() {
   useEffect(() => {
@@ -30,7 +29,6 @@ export default function HeroSection() {
           Building custom websites for businesses is what I do.
         </span>
       </div>
-      <Overlay />
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import './styles/App.css';
@@ -6,7 +7,6 @@ import Nav from './components/Nav';
 import Home from './components/pages/Home';
 import Contact from './components/pages/Contact';
 import About from './components/pages/About';
-import { useEffect } from 'react';
 
 export default function App() {
   // location hook to to get unique pathname key for children of AnimatePresence
