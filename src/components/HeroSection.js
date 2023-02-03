@@ -12,12 +12,6 @@ export default function HeroSection() {
       skewY: 5,
       stagger: { amount: 0.5 },
     });
-
-    gsap.to('.overlay', 2, {
-      y: '-100vh',
-      delay: 2,
-      ease: 'expo.inOut',
-    });
   }, []);
 
   return (
@@ -25,9 +19,7 @@ export default function HeroSection() {
       <video src='/video/bg.mp4' autoPlay loop muted />
       <div className='intro'>
         <span className='intro-top'>Hi, I'm Liu.</span>
-        <span className='intro-btm'>
-          Building custom websites for businesses is what I do.
-        </span>
+        <span className='intro-btm'>Building custom websites for businesses is what I do.</span>
       </div>
     </div>
   );
