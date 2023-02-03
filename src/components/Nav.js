@@ -12,24 +12,19 @@ export default function Nav() {
   return (
     <nav className='nav'>
       <div className='nav-container'>
-        <div className='nav-top'>
-          <ul className='nav-links'>
-            <li>
-              <HashLink
-                to='/#projects'
-                scroll={(navBar) => scrollWithOffset(navBar)}
-              >
-                Projects
-              </HashLink>
-            </li>
-            <li>
-              <Link to='/about'>About</Link>
-            </li>
-            <li>
-              <Link to='/contact'>Contact</Link>
-            </li>
-          </ul>
-        </div>
+        <ul className='nav-links'>
+          <li>
+            <HashLink to='/#projects' scroll={(navBar) => scrollWithOffset(navBar)}>
+              Projects
+            </HashLink>
+          </li>
+          <li>
+            <Link to='/about'>About</Link>
+          </li>
+          <li>
+            <Link to='/contact'>Contact</Link>
+          </li>
+        </ul>
         <div className='nav-btm'>
           <div className='nav-email'>
             <h5>Email</h5>
@@ -40,25 +35,13 @@ export default function Nav() {
             <a href='tel:+447957622859'>+44 7957 622859</a>
           </div>
           <div className='social'>
-            <a
-              target='_blank'
-              rel='noopener noreferrer'
-              href='https://www.linkedin.com/in/liuhe2020'
-            >
+            <a target='_blank' rel='noopener noreferrer' href='https://www.linkedin.com/in/liuhe2020'>
               <FaLinkedinIn className='fab' />
             </a>
-            <a
-              target='_blank'
-              rel='noopener noreferrer'
-              href='https://github.com/liuhe2020'
-            >
+            <a target='_blank' rel='noopener noreferrer' href='https://github.com/liuhe2020'>
               <FaGithubAlt className='fab' />
             </a>
-            <a
-              target='_blank'
-              rel='noopener noreferrer'
-              href='https://twitter.com/liuhe2020'
-            >
+            <a target='_blank' rel='noopener noreferrer' href='https://twitter.com/liuhe2020'>
               <FaTwitter className='fab' />
             </a>
           </div>
