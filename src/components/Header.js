@@ -12,13 +12,19 @@ const Header = ({ history }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const viewportWidth = useViewport();
 
-  const menuHeight = (negative) => {
-    if (viewportWidth < 1600) {
-      if (negative) return '-320px';
-      return '320px';
+  const menuHeight = (arg) => {
+    if (arg === 'page') {
+      if (viewportWidth < 1600) {
+        return '317px';
+      }
+      return 'calc(20vw - 3px)';
     }
-    if (negative) return '-20vw';
-    return '20vw';
+    if (arg === 'nav') {
+      if (viewportWidth < 1600) {
+        return '-320px';
+      }
+      return '-20vw';
+    }
   };
 
   useEffect(() => {
@@ -27,24 +33,26 @@ const Header = ({ history }) => {
       setIsMenuOpen(false);
     });
 
-    // menu open animation based on change of state, navbar is hidden on top of the page and slides down 320px when toggled
+    // navbar is hidden on top of the page and slides down 320px when toggled
     // the rest of the body slides down at the same time for 317px
-    // to prevent white line flashing between the navbar and the page body during animation
+    // to prevent white line/seam flashing between the navbar and the page body during animation
     if (isMenuOpen) {
-      gsap.to('.nav', { css: { top: '0' }, duration: 1, ease: 'expo.inOut' });
-      gsap.to('.page', { y: menuHeight(), duration: 1, ease: 'expo.inOut' });
+      gsap.to('.nav', { css: { top: '0' }, duration: 1, ease: 'expo.inOut' }); // push navbar into view
+      gsap.to('.page', { css: { transform: `translateY(${menuHeight('page')})` }, duration: 1, ease: 'expo.inOut' }); // push page content down along navbar
       gsap.to('.nav-toggle', { css: { display: 'none' } });
       gsap.to('.nav-close', { css: { display: 'block' }, delay: 0.5 });
-      gsap.fromTo('.nav-container', { opacity: 0 }, { opacity: 1, duration: 0.5, delay: 0.5 });
+      gsap.to('body', { css: { overflow: 'hidden' } }); // lock scroll
+      gsap.fromTo('.nav-container', { opacity: 0 }, { opacity: 1, duration: 0.5, delay: 0.5 }); // fade in nav menu content
     } else {
       gsap.to('.nav', {
-        css: { top: menuHeight('negative') },
+        css: { top: menuHeight('nav') },
         duration: 1,
         ease: 'expo.inOut',
       });
       gsap.to('.page', { y: 0, duration: 1, ease: 'expo.inOut' });
       gsap.to('.nav-toggle', { css: { display: '' }, delay: 0.5 });
       gsap.to('.nav-close', { css: { display: 'none' } });
+      gsap.to('body', { css: { overflow: 'unset' } });
       gsap.fromTo('.nav-container', { opacity: 1 }, { opacity: 0, duration: 0.5 });
     }
   });

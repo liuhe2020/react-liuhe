@@ -4,8 +4,11 @@ import Cards from '../Cards';
 import Banner2 from '../Banner2';
 import Footer from '../Footer';
 import { EntryTransition, ExitTransition } from '../PageTransition';
+import ScrollToTop from '../../utils/ScrollToTop';
 
 export default function Home() {
+  ScrollToTop();
+
   return (
     <ExitTransition>
       <HeroSection />
