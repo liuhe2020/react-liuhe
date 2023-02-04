@@ -8,6 +8,7 @@ import Home from './components/pages/Home';
 import Contact from './components/pages/Contact';
 import About from './components/pages/About';
 import Nav from './components/Nav';
+import ScrollToTop from './utils/ScrollToTop';
 
 export default function App() {
   // location hook to to get unique pathname key for children of AnimatePresence
@@ -20,6 +21,7 @@ export default function App() {
 
   return (
     <>
+      {/* <ScrollToTop /> */}
       <Header />
       <Nav />
       <AnimatePresence exitBeforeEnter>

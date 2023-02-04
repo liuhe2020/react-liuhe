@@ -8,16 +8,17 @@ import Footer from '../Footer';
 import { EntryTransition, ExitTransition } from '../PageTransition';
 
 export default function Contact() {
-  ScrollToTop();
+  // ScrollToTop();
 
   useEffect(() => {
     // fix flashing animated titles on page load
     gsap.to('.contact-title-inner', { css: { visibility: 'visible' } });
 
     // gsap opening animation on page load
-    gsap.from('.contact-title', 2, {
+    gsap.from('.contact-title', {
       y: 560,
       ease: 'power4.out',
+      duration: 2,
       delay: 0.6,
       skewY: 4,
       stagger: { amount: 0.5 },

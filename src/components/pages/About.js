@@ -32,7 +32,7 @@ const aboutMe = [
 ];
 
 export default function About() {
-  ScrollToTop();
+  // ScrollToTop();
 
   // refs array for gsap fade in
   const fadeInRefs = useRef([]);
@@ -49,19 +49,14 @@ export default function About() {
     gsap.to('.top-container', { css: { visibility: 'visible' } });
 
     // gsap opening animation on page load
-    gsap.from('.about-titles h1', 2, {
+    gsap.from('.about-titles h1', {
       y: 480,
       ease: 'power4.out',
+      duration: 2,
       delay: 0.6,
       skewY: 5,
       stagger: { amount: 0.5 },
     });
-
-    // gsap.to('.overlay', 2, {
-    //   y: '-100vh',
-    //   delay: 2,
-    //   ease: 'expo.inOut',
-    // });
 
     // text fade in animation on scroll with scrolltrigger
     fadeInRefs.current.forEach((el) => {

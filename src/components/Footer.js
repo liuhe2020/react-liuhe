@@ -10,35 +10,23 @@ export default function Footer() {
       <div className='footer-container'>
         <div className='footer-left'>
           <h2 className='footer-text'>LET'S CONNECT</h2>
-          <HashLink to='/#home' smooth>
+          <HashLink to='/#' smooth>
             <img src='/svg/liu_he_logo.png' alt='liu_he_logo' />
           </HashLink>
         </div>
         <ul className='footer-list'>
           <li className='footer-list-item'>
-            <a
-              target='_blank'
-              rel='noopener noreferrer'
-              href='https://www.linkedin.com/in/liuhe2020'
-            >
+            <a target='_blank' rel='noopener noreferrer' href='https://www.linkedin.com/in/liuhe2020'>
               LinkedIn
             </a>
           </li>
           <li className='footer-list-item'>
-            <a
-              target='_blank'
-              rel='noopener noreferrer'
-              href='https://twitter.com/liuhe2020'
-            >
+            <a target='_blank' rel='noopener noreferrer' href='https://twitter.com/liuhe2020'>
               Twitter
             </a>
           </li>
           <li className='footer-list-item'>
-            <a
-              target='_blank'
-              rel='noopener noreferrer'
-              href='https://github.com/liuhe2020'
-            >
+            <a target='_blank' rel='noopener noreferrer' href='https://github.com/liuhe2020'>
               GitHub
             </a>
           </li>
@@ -54,9 +42,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className='copyright'>
-        © {year} Liu He .dev. All Rights Reserved.
-      </div>
+      <div className='copyright'>© {year} Liu He .dev. All Rights Reserved.</div>
     </div>
   );
 }

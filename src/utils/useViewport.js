@@ -5,12 +5,9 @@ const getWindowDimensions = () => {
   return width;
 };
 
-const useViewport = () => {
+export default function useViewport() {
   const [viewportWidth, setViewportWidth] = useState(getWindowDimensions());
-  const handleResize = useCallback(
-    () => setViewportWidth(getWindowDimensions()),
-    []
-  );
+  const handleResize = useCallback(() => setViewportWidth(getWindowDimensions()), []);
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);
@@ -19,6 +16,4 @@ const useViewport = () => {
   }, [handleResize]);
 
   return viewportWidth;
-};
-
-export default useViewport;
+}

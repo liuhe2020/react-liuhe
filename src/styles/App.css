@@ -35,8 +35,6 @@
 }
 
 .page {
-  /* absolute takes element out off document flow, translated on y axis when navbar drops down and up will leave white space at the bottom of the document if not absolute */
-  position: absolute;
   background: #fff;
 }
 
@@ -48,3 +46,9 @@
   z-index: 1;
   top: 0vh;
 }
+
+/* body {
+  position: fixed;
+  overflow-y: scroll;
+  width: 100%;
+} */

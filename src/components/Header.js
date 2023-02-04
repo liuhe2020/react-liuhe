@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, useLocation } from 'react-router-dom';
 // hash link allows scroll to hash(element by #id) even from another page component
 import { HashLink } from 'react-router-hash-link';
 import gsap from 'gsap';
+import { RemoveScroll } from 'react-remove-scroll';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { FaRegArrowAltCircleUp } from 'react-icons/fa';
 import useViewport from '../utils/useViewport';
@@ -10,8 +11,24 @@ import '../styles/Header.css';
 
 const Header = ({ history }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { pathname } = useLocation();
   const viewportWidth = useViewport();
 
+  // scroll action for navigation on logo click
+  const scrollToHome = () => {
+    if (pathname === '/') {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth',
+      });
+      return;
+    }
+    // delay scroll to top for 1s to allow page exit animation
+    setTimeout(() => window.scrollTo(0, 0), 1000);
+  };
+
+  // helper to calc height for nav animation distance
   const menuHeight = (arg) => {
     if (arg === 'page') {
       if (viewportWidth < 1600) {
@@ -33,15 +50,13 @@ const Header = ({ history }) => {
       setIsMenuOpen(false);
     });
 
-    // navbar is hidden on top of the page and slides down 320px when toggled
-    // the rest of the body slides down at the same time for 317px
-    // to prevent white line/seam flashing between the navbar and the page body during animation
+    // navbar is hidden on top of the page and slides down 320px when toggled, the rest of the body slides down at the same time for 317px. to prevent white line/seam flashing between the navbar and the page body during animation
+    // animating padding on page instead of translateY, to avoid white space at bottom of page
     if (isMenuOpen) {
       gsap.to('.nav', { css: { top: '0' }, duration: 1, ease: 'expo.inOut' }); // push navbar into view
-      gsap.to('.page', { css: { transform: `translateY(${menuHeight('page')})` }, duration: 1, ease: 'expo.inOut' }); // push page content down along navbar
+      gsap.to('.page', { css: { paddingTop: menuHeight('page') }, duration: 1, ease: 'expo.inOut' }); // push page content down along navbar
       gsap.to('.nav-toggle', { css: { display: 'none' } });
       gsap.to('.nav-close', { css: { display: 'block' }, delay: 0.5 });
-      gsap.to('body', { css: { overflow: 'hidden' } }); // lock scroll
       gsap.fromTo('.nav-container', { opacity: 0 }, { opacity: 1, duration: 0.5, delay: 0.5 }); // fade in nav menu content
     } else {
       gsap.to('.nav', {
@@ -49,24 +64,26 @@ const Header = ({ history }) => {
         duration: 1,
         ease: 'expo.inOut',
       });
-      gsap.to('.page', { y: 0, duration: 1, ease: 'expo.inOut' });
+      gsap.to('.page', { css: { paddingTop: '0' }, duration: 1, ease: 'expo.inOut' });
       gsap.to('.nav-toggle', { css: { display: '' }, delay: 0.5 });
       gsap.to('.nav-close', { css: { display: 'none' } });
-      gsap.to('body', { css: { overflow: 'unset' } });
       gsap.fromTo('.nav-container', { opacity: 1 }, { opacity: 0, duration: 0.5 });
     }
-  });
+  }, [isMenuOpen]);
 
   return (
-    <div className='header'>
-      <div className='header-container'>
-        <HashLink to='/#home' smooth className='logo'>
-          <img src='/svg/liu_he_logo.png' alt='liu_he_logo' />
-        </HashLink>
-        <GiHamburgerMenu className='nav-toggle' onClick={() => setIsMenuOpen(true)} />
-        <FaRegArrowAltCircleUp className='nav-close' onClick={() => setIsMenuOpen(false)} />
+    <>
+      <div className='header'>
+        <div className='header-container'>
+          <HashLink to='/#' scroll={() => scrollToHome()} className='logo'>
+            <img src='/svg/liu_he_logo.png' alt='liu_he_logo' />
+          </HashLink>
+          <GiHamburgerMenu className='nav-toggle' onClick={() => setIsMenuOpen(true)} />
+          <FaRegArrowAltCircleUp className='nav-close' onClick={() => setIsMenuOpen(false)} />
+        </div>
       </div>
-    </div>
+      {isMenuOpen && <RemoveScroll removeScrollBar={false} />}
+    </>
   );
 };
 
