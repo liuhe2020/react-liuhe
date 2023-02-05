@@ -1,18 +1,29 @@
-import { HashLink } from 'react-router-hash-link';
+import { useLocation, Link } from 'react-router-dom';
 import '../styles/Footer.css';
 
 export default function Footer() {
+  const { pathname } = useLocation();
   const today = new Date();
   const year = today.getFullYear();
+
+  const handleHomeScroll = () => {
+    if (pathname === '/') {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth',
+      });
+    }
+  };
 
   return (
     <div className='footer'>
       <div className='footer-container'>
         <div className='footer-left'>
-          <h2 className='footer-text'>LET'S CONNECT</h2>
-          <HashLink to='/#' smooth>
+          <h3 className='footer-text'>LET'S CONNECT</h3>
+          <Link to='/#' className='footer-logo' onClick={handleHomeScroll}>
             <img src='/svg/liu_he_logo.png' alt='liu_he_logo' />
-          </HashLink>
+          </Link>
         </div>
         <ul className='footer-list'>
           <li className='footer-list-item'>
@@ -41,8 +52,8 @@ export default function Footer() {
             <a href='tel:+447957622859'>+44 7957 622859</a>
           </div>
         </div>
+        <p className='copyright'>&copy; {year} All Rights Reserved.</p>
       </div>
-      <div className='copyright'>© {year} Liu He .dev. All Rights Reserved.</div>
     </div>
   );
 }

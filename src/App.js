@@ -3,12 +3,10 @@ import { Route, Switch, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import './styles/App.css';
 import Header from './components/Header';
-// import Nav from './components/Nav';
+import Nav from './components/Nav';
 import Home from './components/pages/Home';
 import Contact from './components/pages/Contact';
 import About from './components/pages/About';
-import Nav from './components/Nav';
-import ScrollToTop from './utils/ScrollToTop';
 
 export default function App() {
   // location hook to to get unique pathname key for children of AnimatePresence
@@ -21,7 +19,6 @@ export default function App() {
 
   return (
     <>
-      {/* <ScrollToTop /> */}
       <Header />
       <Nav />
       <AnimatePresence exitBeforeEnter>

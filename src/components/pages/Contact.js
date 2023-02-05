@@ -3,12 +3,12 @@ import { useForm } from 'react-hook-form';
 import emailjs from 'emailjs-com';
 import gsap from 'gsap';
 import '../../styles/Contact.css';
-import ScrollToTop from '../../utils/ScrollToTop';
 import Footer from '../Footer';
 import { EntryTransition, ExitTransition } from '../PageTransition';
+import useScrollToTop from '../../utils/useScrollToTop';
 
 export default function Contact() {
-  // ScrollToTop();
+  useScrollToTop();
 
   useEffect(() => {
     // fix flashing animated titles on page load

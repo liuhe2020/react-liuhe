@@ -2,9 +2,9 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import '../../styles/About.css';
-import ScrollToTop from '../../utils/ScrollToTop';
 import Footer from '../Footer';
 import { EntryTransition, ExitTransition } from '../PageTransition';
+import useScrollToTop from '../../utils/useScrollToTop';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -32,8 +32,7 @@ const aboutMe = [
 ];
 
 export default function About() {
-  // ScrollToTop();
-
+  useScrollToTop();
   // refs array for gsap fade in
   const fadeInRefs = useRef([]);
   fadeInRefs.current = [];

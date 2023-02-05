@@ -1,15 +1,12 @@
 import { useRef } from 'react';
 import { HashLink } from 'react-router-hash-link';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FaTwitter, FaLinkedinIn, FaGithubAlt } from 'react-icons/fa';
 import '../styles/Nav.css';
 
 export default function Nav() {
-  const { pathname } = useLocation();
   const navRef = useRef();
-
-  // delay scroll to top for 1s to allow page exit animation
-  const delayScroll = () => setTimeout(() => window.scrollTo(0, 0), 1000);
+  const { pathname } = useLocation();
 
   const scrollToProjects = (el) => {
     // offset navbar height when scroll in the home page
@@ -21,7 +18,6 @@ export default function Nav() {
       });
       return;
     }
-    // animation is smoother without delay 1s for page exit animation
     el.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -33,16 +29,21 @@ export default function Nav() {
             <HashLink to='/#projects' scroll={(el) => scrollToProjects(el)}>
               Projects
             </HashLink>
+            {/* <HashLink to='/#projects' scroll={(el) => scrollToProjects(el)}>
+              Projects
+            </HashLink> */}
           </li>
           <li>
-            <HashLink to='/about#' scroll={() => delayScroll()}>
+            <Link to='/about'>About</Link>
+            {/* <HashLink to='/about#' scroll={() => delayScroll()}>
               About
-            </HashLink>
+            </HashLink> */}
           </li>
           <li>
-            <HashLink to='/contact#' scroll={() => delayScroll()}>
+            <Link to='/contact'>Contact</Link>
+            {/* <HashLink to='/contact#' scroll={() => delayScroll()}>
               Contact
-            </HashLink>
+            </HashLink> */}
           </li>
         </ul>
         <div className='nav-btm'>

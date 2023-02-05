@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
-import { withRouter, useLocation } from 'react-router-dom';
-// hash link allows scroll to hash(element by #id) even from another page component
-import { HashLink } from 'react-router-hash-link';
+import { withRouter, useLocation, Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { RemoveScroll } from 'react-remove-scroll';
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -14,21 +12,18 @@ const Header = ({ history }) => {
   const { pathname } = useLocation();
   const viewportWidth = useViewport();
 
-  // scroll action for navigation on logo click
-  const scrollToHome = () => {
+  // handle scroll to top on the home page
+  const handleHomeScroll = () => {
     if (pathname === '/') {
       window.scrollTo({
         top: 0,
         left: 0,
         behavior: 'smooth',
       });
-      return;
     }
-    // delay scroll to top for 1s to allow page exit animation
-    setTimeout(() => window.scrollTo(0, 0), 1000);
   };
 
-  // helper to calc height for nav animation distance
+  // helper to calc height for nav animation
   const menuHeight = (arg) => {
     if (arg === 'page') {
       if (viewportWidth < 1600) {
@@ -69,19 +64,20 @@ const Header = ({ history }) => {
       gsap.to('.nav-close', { css: { display: 'none' } });
       gsap.fromTo('.nav-container', { opacity: 1 }, { opacity: 0, duration: 0.5 });
     }
-  }, [isMenuOpen]);
+  });
 
   return (
     <>
       <div className='header'>
         <div className='header-container'>
-          <HashLink to='/#' scroll={() => scrollToHome()} className='logo'>
+          <Link to='/' className='logo' onClick={handleHomeScroll}>
             <img src='/svg/liu_he_logo.png' alt='liu_he_logo' />
-          </HashLink>
+          </Link>
           <GiHamburgerMenu className='nav-toggle' onClick={() => setIsMenuOpen(true)} />
           <FaRegArrowAltCircleUp className='nav-close' onClick={() => setIsMenuOpen(false)} />
         </div>
       </div>
+      {/* Lock body scroll */}
       {isMenuOpen && <RemoveScroll removeScrollBar={false} />}
     </>
   );

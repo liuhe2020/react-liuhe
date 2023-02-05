@@ -16,7 +16,7 @@
 }
 
 .logo {
-  width: 100px;
+  width: 6.25rem;
   transform: translateY(5px);
   pointer-events: auto;
 }
