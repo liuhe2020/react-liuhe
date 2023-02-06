@@ -8,6 +8,7 @@ import useScrollToTop from '../../utils/useScrollToTop';
 
 export default function Home() {
   useScrollToTop();
+
   return (
     <ExitTransition>
       <HeroSection />

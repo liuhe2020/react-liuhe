@@ -1,12 +1,9 @@
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 
 export default function useScrollToTop() {
-  const location = useLocation();
-
   useEffect(() => {
     // do not scroll to top on hash routes, i.e. #projects
-    if (location.hash) {
+    if (window.location.href.includes('#')) {
       return;
     }
     window.scrollTo(0, 0);

@@ -14,7 +14,7 @@ const EntryTransition = () => {
 
 const ExitTransition = ({ children }) => {
   return (
-    <motion.div className='page' exit={{ opacity: 0, transition: { duration: 1 } }}>
+    <motion.div className='page' initial={{ visibility: 'hidden' }} animate={{ visibility: 'visible' }} exit={{ opacity: 0, transition: { duration: 1 } }}>
       {children}
     </motion.div>
   );

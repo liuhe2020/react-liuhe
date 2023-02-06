@@ -9,7 +9,7 @@ import Contact from './components/pages/Contact';
 import About from './components/pages/About';
 
 export default function App() {
-  // location hook to to get unique pathname key for children of AnimatePresence
+  // location hook to to get unique pathname as key for children of AnimatePresence
   const location = useLocation();
 
   // scroll to top on manual page reload/refresh
