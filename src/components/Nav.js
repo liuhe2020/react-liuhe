@@ -29,21 +29,12 @@ export default function Nav() {
             <HashLink to='/#projects' scroll={(el) => scrollToProjects(el)}>
               Projects
             </HashLink>
-            {/* <HashLink to='/#projects' scroll={(el) => scrollToProjects(el)}>
-              Projects
-            </HashLink> */}
           </li>
           <li>
             <Link to='/about'>About</Link>
-            {/* <HashLink to='/about#' scroll={() => delayScroll()}>
-              About
-            </HashLink> */}
           </li>
           <li>
             <Link to='/contact'>Contact</Link>
-            {/* <HashLink to='/contact#' scroll={() => delayScroll()}>
-              Contact
-            </HashLink> */}
           </li>
         </ul>
         <div className='nav-btm'>

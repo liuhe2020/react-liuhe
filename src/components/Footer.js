@@ -7,6 +7,7 @@ export default function Footer() {
   const year = today.getFullYear();
 
   const handleHomeScroll = () => {
+    // smooth scroll to top if already on home page
     if (pathname === '/') {
       window.scrollTo({
         top: 0,

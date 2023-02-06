@@ -12,8 +12,8 @@ const Header = ({ history }) => {
   const { pathname } = useLocation();
   const viewportWidth = useViewport();
 
-  // handle scroll to top on the home page
   const handleHomeScroll = () => {
+    // smooth scroll to top if already on home page
     if (pathname === '/') {
       window.scrollTo({
         top: 0,
