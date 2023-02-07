@@ -34,8 +34,9 @@
   font-weight: normal;
 }
 
+/* page & nav must to be same colour to avoid flashing seam/line when animating */
 .page {
-  background: #fff;
+  background: #03010e;
 }
 
 .overlay {

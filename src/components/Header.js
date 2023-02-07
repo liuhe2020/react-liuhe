@@ -27,9 +27,9 @@ const Header = ({ history }) => {
   const menuHeight = (arg) => {
     if (arg === 'page') {
       if (viewportWidth < 1600) {
-        return '317px';
+        return '320px';
       }
-      return 'calc(20vw - 3px)';
+      return '20vw';
     }
     if (arg === 'nav') {
       if (viewportWidth < 1600) {
@@ -45,7 +45,8 @@ const Header = ({ history }) => {
       setIsMenuOpen(false);
     });
 
-    // navbar is hidden on top of the page and slides down 320px when toggled, the rest of the body slides down at the same time for 317px. to prevent white line/seam flashing between the navbar and the page body during animation
+    // navbar is hidden on top of the window and slides down 320px or 20vw (based on viewport) when toggled
+    // the rest of the page (.page class) slides down at the same time
     // animating padding on page instead of translateY, to avoid white space at bottom of page
     if (isMenuOpen) {
       gsap.to('.nav', { css: { top: '0' }, duration: 1, ease: 'expo.inOut' }); // push navbar into view
@@ -60,7 +61,7 @@ const Header = ({ history }) => {
         ease: 'expo.inOut',
       });
       gsap.to('.page', { css: { paddingTop: '0' }, duration: 1, ease: 'expo.inOut' });
-      gsap.to('.nav-toggle', { css: { display: '' }, delay: 0.5 });
+      gsap.to('.nav-toggle', { css: { display: 'block' }, delay: 0.5 });
       gsap.to('.nav-close', { css: { display: 'none' } });
       gsap.fromTo('.nav-container', { opacity: 1 }, { opacity: 0, duration: 0.5 });
     }

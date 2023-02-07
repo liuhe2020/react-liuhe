@@ -11,12 +11,14 @@ export default function Home() {
 
   return (
     <PageTransition>
-      <HeroSection />
-      <Banner />
-      <Cards />
-      <Banner2 />
-      <Footer />
-      <EntryTransition />
+      <div className='home-container'>
+        <HeroSection />
+        <Banner />
+        <Cards />
+        <Banner2 />
+        <Footer />
+        <EntryTransition />
+      </div>
     </PageTransition>
   );
 }

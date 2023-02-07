@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 11vw;
+  padding: 11vw;
 }
 
 .slogan h1 {
@@ -41,7 +41,7 @@
 
 @media screen and (max-width: 768px) {
   .slogan {
-    margin: 15vw 11vw;
+    padding: 15vw 11vw;
   }
 
   .banner-text {
