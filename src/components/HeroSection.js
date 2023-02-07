@@ -5,8 +5,9 @@ import '../styles/HeroSection.css';
 export default function HeroSection() {
   useEffect(() => {
     //intro animation
-    gsap.from('.intro span', 2, {
+    gsap.from('.intro span', {
       y: 480,
+      duration: 2,
       ease: 'power4.out',
       delay: 0.6,
       skewY: 5,

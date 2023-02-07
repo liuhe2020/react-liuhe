@@ -8,32 +8,36 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Banner() {
   useEffect(() => {
     //slogan slide up animation
-    gsap.from('.slogan1', 1, {
+    gsap.from('.slogan1', {
       y: '30vh',
+      duration: 1,
       ease: 'power4.out',
       scrollTrigger: {
         trigger: '.slogan1',
         start: 'top 100%',
       },
     });
-    gsap.from('.slogan2', 1, {
+    gsap.from('.slogan2', {
       y: '30vh',
+      duration: 1,
       ease: 'power4.out',
       scrollTrigger: {
         trigger: '.slogan2',
         start: 'top 100%',
       },
     });
-    gsap.from('.slogan3', 1, {
+    gsap.from('.slogan3', {
       y: '30vh',
+      duration: 1,
       ease: 'power4.out',
       scrollTrigger: {
         trigger: '.slogan3',
         start: 'top 100%',
       },
     });
-    gsap.from('.slogan4', 1, {
+    gsap.from('.slogan4', {
       y: '30vh',
+      duration: 1,
       ease: 'power4.out',
       scrollTrigger: {
         trigger: '.slogan4',
@@ -77,10 +81,8 @@ export default function Banner() {
           <h1 className='slogan4'>PERFORMANCE</h1>
         </div>
         <h2 className='banner-text'>
-          I strive to create beautiful looking and interactive websites by
-          merging imagination and technology to help your business accelerate
-          its digital transformation. The goal isn't to build a website. The
-          goal is to build your business.
+          I strive to create beautiful looking and interactive websites by merging imagination and technology to help your business accelerate its digital
+          transformation. The goal isn't to build a website. The goal is to build your business.
         </h2>
       </div>
     </div>
