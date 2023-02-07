@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import '../../styles/About.css';
 import Footer from '../Footer';
-import { EntryTransition, ExitTransition } from '../PageTransition';
+import { EntryTransition, PageTransition } from '../PageTransition';
 import useScrollToTop from '../../utils/useScrollToTop';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -81,7 +81,7 @@ export default function About() {
   }, []);
 
   return (
-    <ExitTransition>
+    <PageTransition>
       <div className='about-container'>
         <div className='top-container'>
           <div className='about-titles'>
@@ -105,6 +105,6 @@ export default function About() {
       </div>
       <Footer />
       <EntryTransition />
-    </ExitTransition>
+    </PageTransition>
   );
 }

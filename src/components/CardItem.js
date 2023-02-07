@@ -26,7 +26,7 @@ export default function CardItem(props) {
         ease: 'power2.out',
         scrollTrigger: {
           trigger: overlay,
-          start: 'top 30%',
+          start: 'top 35%',
         },
       }
     );
@@ -103,46 +103,21 @@ export default function CardItem(props) {
     <div className='card' id='card'>
       <div className='card-item-container'>
         <div className='img-container'>
-          <img
-            ref={img}
-            className='card-item-img'
-            src={props.src}
-            alt='project_img'
-          />
+          <img ref={img} className='card-item-img' src={props.src} alt='project_img' />
           <div ref={(el) => (overlay = el)} className='img-overlay'></div>
         </div>
         <div className='card-item-info'>
-          <a
-            ref={gitLink}
-            className='card-item-git-link'
-            target='_blank'
-            rel='noopener noreferrer'
-            href={props.gitUrl}
-          >
+          <a ref={gitLink} className='card-item-git-link' target='_blank' rel='noopener noreferrer' href={props.gitUrl}>
             <h4 className='card-item-git'>GitHub</h4>
-            <img
-              className='card-item-arrow-left'
-              src='../svg/arrow_left.png'
-              alt='Arrow Icon'
-            />
+            <img className='card-item-arrow-left' src='../svg/arrow_left.png' alt='Arrow Icon' />
           </a>
           <p ref={projectInfo} className='card-item-text'>
             {props.text}
           </p>
         </div>
         <div className='card-item-link-container'>
-          <a
-            ref={projectLink}
-            className='card-item-link'
-            target='_blank'
-            rel='noopener noreferrer'
-            href={props.url}
-          >
-            <img
-              className='card-item-arrow-right'
-              src='../svg/arrow_right.png'
-              alt='Arrow Icon'
-            />
+          <a ref={projectLink} className='card-item-link' target='_blank' rel='noopener noreferrer' href={props.url}>
+            <img className='card-item-arrow-right' src='../svg/arrow_right.png' alt='Arrow Icon' />
             <h3 className='card-item-title'>{props.title}</h3>
           </a>
         </div>

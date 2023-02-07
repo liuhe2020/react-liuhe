@@ -12,7 +12,8 @@ const EntryTransition = () => {
   return <motion.div className='overlay' variants={pageVariants} initial='start' animate='in' />;
 };
 
-const ExitTransition = ({ children }) => {
+// page transition wrapper, set transition in from invis to vis to avoid flashes from component mounting. fade out on exit
+const PageTransition = ({ children }) => {
   return (
     <motion.div className='page' initial={{ visibility: 'hidden' }} animate={{ visibility: 'visible' }} exit={{ opacity: 0, transition: { duration: 1 } }}>
       {children}
@@ -20,4 +21,4 @@ const ExitTransition = ({ children }) => {
   );
 };
 
-export { EntryTransition, ExitTransition };
+export { EntryTransition, PageTransition };

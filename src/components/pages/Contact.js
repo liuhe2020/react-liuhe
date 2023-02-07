@@ -4,7 +4,7 @@ import emailjs from 'emailjs-com';
 import gsap from 'gsap';
 import '../../styles/Contact.css';
 import Footer from '../Footer';
-import { EntryTransition, ExitTransition } from '../PageTransition';
+import { EntryTransition, PageTransition } from '../PageTransition';
 import useScrollToTop from '../../utils/useScrollToTop';
 
 export default function Contact() {
@@ -48,7 +48,7 @@ export default function Contact() {
   };
 
   return (
-    <ExitTransition>
+    <PageTransition>
       <div className='contact-container'>
         <div className='contact-title-container'>
           <div className='contact-title-inner'>
@@ -123,6 +123,6 @@ export default function Contact() {
       </div>
       <Footer />
       <EntryTransition />
-    </ExitTransition>
+    </PageTransition>
   );
 }
