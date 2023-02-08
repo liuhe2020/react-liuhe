@@ -23,23 +23,23 @@ const Header = ({ history }) => {
     }
   };
 
-  // helper to calc height for nav animation
-  const menuHeight = (arg) => {
-    if (arg === 'page') {
-      if (viewportWidth < 1600) {
-        return '320px';
-      }
-      return '20vw';
-    }
-    if (arg === 'nav') {
-      if (viewportWidth < 1600) {
-        return '-320px';
-      }
-      return '-20vw';
-    }
-  };
-
   useEffect(() => {
+    // helper to calc height for nav animation
+    const menuHeight = (arg) => {
+      if (arg === 'page') {
+        if (viewportWidth < 1600) {
+          return '320px';
+        }
+        return '20vw';
+      }
+      if (arg === 'nav') {
+        if (viewportWidth < 1600) {
+          return '-320px';
+        }
+        return '-20vw';
+      }
+    };
+
     // set menu to close after navigation based on listening to route change
     history.listen(() => {
       setIsMenuOpen(false);
@@ -65,7 +65,7 @@ const Header = ({ history }) => {
       gsap.to('.nav-close', { css: { display: 'none' } });
       gsap.fromTo('.nav-container', { opacity: 1 }, { opacity: 0, duration: 0.5 });
     }
-  });
+  }, [isMenuOpen, history, viewportWidth]);
 
   return (
     <>
