@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
+import { z } from 'zod';
 import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
 import emailjs from 'emailjs-com';
 import gsap from 'gsap';
 import '../../styles/Contact.css';
@@ -7,8 +9,44 @@ import Footer from '../Footer';
 import { EntryTransition, PageTransition } from '../PageTransition';
 import useScrollToTop from '../../utils/useScrollToTop';
 
+const formSchema = z.object({
+  name: z.string().min(2, 'Must be 2 or more characters long').max(70, 'Must be less than 70 characters'),
+  company: z.string().max(70, 'Must be less than 70 characters').optional(),
+  phone: z.string().max(15, 'Must be less than 15 digits').optional(),
+  email: z.string().email('Please enter a valid email addresss').max(70, 'Must be less than 70 characters'),
+  message: z.string().min(1, 'Please enter your message').max(5000, 'Must be less than 5000 characters'),
+});
+
 export default function Contact() {
   useScrollToTop();
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting, isSubmitted, isSubmitSuccessful },
+  } = useForm({
+    resolver: zodResolver(formSchema),
+  });
+
+  const onSubmit = (data) => {
+    console.log(data);
+    return new Promise((resolve) => {
+      setTimeout(() => resolve(), 3000);
+    });
+    // email.js
+    // emailjs.sendForm('liuhe_yahoo', 'template_liuhe', '#form', 'user_QXaR2CMF0bg5jBJRseDBl').then(
+    //   (result) => {
+    //     setStatusMsg('Message sent! Thank you.');
+    //     submitMsg.className = 'status-msg success';
+    //     e.target.reset();
+    //   },
+    //   (error) => {
+    //     setStatusMsg('Failed to send message! Please try again.');
+    //     submitMsg.className = 'status-msg failure';
+    //   }
+    // );
+  };
 
   useEffect(() => {
     // fix flashing animated titles on page load
@@ -25,28 +63,6 @@ export default function Contact() {
     });
   }, []);
 
-  // react hook form
-  const { register, handleSubmit, errors } = useForm({ mode: 'onBlur' });
-  const [statusMsg, setStatusMsg] = useState('Msg');
-
-  const onSubmit = (data, e) => {
-    const submitMsg = document.querySelector('.status-msg');
-    console.log(data);
-
-    // email.js
-    emailjs.sendForm('liuhe_yahoo', 'template_liuhe', '#form', 'user_QXaR2CMF0bg5jBJRseDBl').then(
-      (result) => {
-        setStatusMsg('Message sent! Thank you.');
-        submitMsg.className = 'status-msg success';
-        e.target.reset();
-      },
-      (error) => {
-        setStatusMsg('Failed to send message! Please try again.');
-        submitMsg.className = 'status-msg failure';
-      }
-    );
-  };
-
   return (
     <PageTransition>
       <div className='contact-container'>
@@ -56,79 +72,38 @@ export default function Contact() {
             <h1 className='contact-title'>TOUCH</h1>
           </div>
         </div>
-        <form noValidate className='form' id='form' name='contact' onSubmit={handleSubmit(onSubmit)}>
-          <input type='hidden' name='form-name' value='contact' />
+        <form className='form' id='form' onSubmit={handleSubmit(onSubmit)}>
           <div className='form-top'>
             <div className='form-top-left'>
               <div className='input-field-wrapper'>
-                <input
-                  type='text'
-                  className='input-field'
-                  name='name'
-                  placeholder='Full Name'
-                  ref={register({
-                    required: {
-                      value: true,
-                      message: '*Please enter your name',
-                    },
-                    minLength: {
-                      value: 4,
-                      message: '*Must be at least 4 characters',
-                    },
-                  })}
-                />
+                <input className='input-field' placeholder='Full Name' disabled={isSubmitting} {...register('name')} />
                 {errors.name && <p className='form-error'>{errors.name.message}</p>}
               </div>
               <div className='input-field-wrapper'>
-                <input type='text' className='input-field' name='company' placeholder='Company' ref={register} />
-              </div>
-
-              <div className='input-field-wrapper'>
-                <input type='tel' className='input-field' name='phone' placeholder='Phone' ref={register} />
+                <input className='input-field' placeholder='Company' disabled={isSubmitting} {...register('company')} />
               </div>
               <div className='input-field-wrapper'>
-                <input
-                  type='email'
-                  className='input-field'
-                  name='email'
-                  placeholder='Email'
-                  ref={register({
-                    required: {
-                      value: true,
-                      message: '*Please enter your email address',
-                    },
-                    pattern: {
-                      value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                      message: '*Invalid email address',
-                    },
-                  })}
-                />
+                <input className='input-field' placeholder='Phone' disabled={isSubmitting} {...register('phone')} />
+              </div>
+              <div className='input-field-wrapper'>
+                <input className='input-field' placeholder='Email' disabled={isSubmitting} {...register('email')} />
                 {errors.email && <p className='form-error'>{errors.email.message}</p>}
               </div>
             </div>
             <div className='form-top-right'>
-              <textarea
-                className='textarea'
-                name='msg'
-                placeholder='Your Message'
-                ref={register({
-                  required: {
-                    value: true,
-                    message: '*Please enter your message',
-                  },
-                  minLength: {
-                    value: 4,
-                    message: '*Must be at least 4 characters',
-                  },
-                })}
-              />
-              {errors.msg && <p className='form-error'>{errors.msg.message}</p>}
+              <textarea className='textarea' placeholder='Your Message' disabled={isSubmitting} {...register('message')} />
+              {errors.message && <p className='form-error'>{errors.message.message}</p>}
             </div>
           </div>
-          <button type='submit' className='form-button'>
-            Send
+          <button className='form-button' type='submit' disabled={isSubmitting}>
+            {isSubmitting ? 'Sending...' : 'Send'}
+            {isSubmitting && (
+              <div className='form-loader-wrapper'>
+                <span className='form-loader' />
+              </div>
+            )}
           </button>
-          <p className='status-msg'>{statusMsg}</p>
+          <p className='status-msg'></p>
         </form>
       </div>
       <Footer />

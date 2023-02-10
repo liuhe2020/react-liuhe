@@ -5,6 +5,7 @@
   z-index: 5;
   mix-blend-mode: difference;
   pointer-events: none;
+  color: #ffffec;
 }
 
 .header-container {
@@ -29,7 +30,7 @@
 .nav-toggle {
   font-size: 2rem;
   cursor: pointer;
-  color: #fff;
+
   pointer-events: auto;
 }
 
@@ -37,7 +38,6 @@
   display: none;
   font-size: 2rem;
   cursor: pointer;
-  color: #fff;
   pointer-events: auto;
 }
 

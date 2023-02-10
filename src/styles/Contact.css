@@ -17,7 +17,6 @@
 }
 
 .contact-title-inner {
-  /* display: flex; */
   align-items: center;
   height: 18vw;
   overflow: hidden;
@@ -38,10 +37,10 @@
 }
 
 .form {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
   width: 65%;
   margin-left: 4vw;
   background: #fff;
@@ -72,6 +71,10 @@
   font-size: 1.8vw;
 }
 
+.input-field:disabled {
+  background-color: #fff;
+}
+
 .form-top-right {
   position: relative;
   width: 25vw;
@@ -90,7 +93,14 @@
   padding-top: 0.65vw;
 }
 
+.textarea:disabled {
+  background-color: #fff;
+}
+
 .form-button {
+  position: relative;
+  display: block;
+  width: 25vw;
   cursor: pointer;
   outline: none;
   border: none;
@@ -98,6 +108,79 @@
   background: #fff;
   font-size: 1.8vw;
   font-weight: 600;
+  text-align: left;
+}
+
+.form-button:disabled {
+  color: #1c1c1c;
+}
+
+.form-loader-wrapper {
+  position: absolute;
+  bottom: -1.5vw;
+  left: 0;
+  width: 100%;
+}
+
+.form-loader {
+  width: 0;
+  height: 0.4vw;
+  display: inline-block;
+  position: relative;
+  background: #1c1c1c;
+  animation: animFw 8s linear infinite;
+}
+
+.form-loader::after,
+.form-loader::before {
+  content: '';
+  width: 1vw;
+  height: 0.1vw;
+  background: #1c1c1c;
+  position: absolute;
+  top: 0.8vw;
+  right: -0.3vw;
+  opacity: 0;
+  transform: rotate(-45deg) translateX(0px);
+  box-sizing: border-box;
+  animation: coli1 0.3s linear infinite;
+}
+
+.form-loader::before {
+  top: -0.5vw;
+  transform: rotate(45deg);
+  animation: coli2 0.3s linear infinite;
+}
+
+@keyframes animFw {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes coli1 {
+  0% {
+    transform: rotate(-45deg) translateX(0px);
+    opacity: 0.7;
+  }
+  100% {
+    transform: rotate(-45deg) translateX(-4vw);
+    opacity: 0;
+  }
+}
+
+@keyframes coli2 {
+  0% {
+    transform: rotate(45deg) translateX(0px);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(45deg) translateX(-4vw);
+    opacity: 0.7;
+  }
 }
 
 .form-error {
@@ -188,8 +271,47 @@
   }
 
   .form-button {
+    width: 80%;
     margin: 10vw auto 4vw auto;
     font-size: 4vw;
+  }
+
+  .form-loader {
+    height: 0.6vw;
+  }
+
+  .form-loader::after,
+  .form-loader::before {
+    width: 1vw;
+    height: 0.2vw;
+    top: 0.8vw;
+    right: -0.3vw;
+  }
+
+  .form-loader::before {
+    top: -0.5vw;
+  }
+
+  @keyframes coli1 {
+    0% {
+      transform: rotate(-45deg) translateX(0px);
+      opacity: 0.7;
+    }
+    100% {
+      transform: rotate(-45deg) translateX(-6vw);
+      opacity: 0;
+    }
+  }
+
+  @keyframes coli2 {
+    0% {
+      transform: rotate(45deg) translateX(0px);
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(45deg) translateX(-6vw);
+      opacity: 0.7;
+    }
   }
 
   .status-msg {

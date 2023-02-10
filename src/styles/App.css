@@ -34,6 +34,10 @@
   font-weight: normal;
 }
 
+body {
+  color: #1c1c1c;
+}
+
 /* page & nav must to be same colour to avoid flashing seam/line when animating */
 .page {
   background: #03010e;

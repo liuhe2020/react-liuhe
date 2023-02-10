@@ -16,7 +16,7 @@ video {
 .intro {
   position: absolute;
   width: 100%;
-  color: #fff;
+  color: #ffffec;
   display: flex;
   flex-direction: column;
   text-align: center;
