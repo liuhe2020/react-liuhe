@@ -90,7 +90,7 @@
   border: none;
   border-bottom: 1px solid #dcdcdc;
   font-size: 1.8vw;
-  padding-top: 0.65vw;
+  padding-top: 0.1vw;
 }
 
 .textarea:disabled {
@@ -194,7 +194,6 @@
   font-weight: 600;
   font-size: 1.8vw;
   margin-top: 3vw;
-  opacity: 0;
 }
 .success {
   opacity: 1;
@@ -209,6 +208,7 @@
   .contact-container {
     flex-direction: column;
     height: auto;
+    padding-bottom: 15vw;
   }
 
   .contact-title-container {
@@ -316,7 +316,8 @@
 
   .status-msg {
     font-size: 4vw;
-    margin: 0 auto 10vw auto;
+    width: 80%;
+    margin: 3vw auto;
   }
 }
 
