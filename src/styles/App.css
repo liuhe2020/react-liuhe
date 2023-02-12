@@ -51,3 +51,7 @@ body {
   z-index: 1;
   top: 0vh;
 }
+
+.grecaptcha-badge {
+  visibility: hidden;
+}

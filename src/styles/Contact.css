@@ -36,14 +36,29 @@
   line-height: 6.3vw;
 }
 
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-left: 4vw;
+  background: #fff;
+}
+
 .form {
+  flex: 1;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 65%;
-  margin-left: 4vw;
-  background: #fff;
+}
+
+.recaptcha-terms {
+  margin-bottom: 2vw;
+  font-size: 1.2vw;
+}
+
+.recaptcha-terms a {
+  color: #1c1c1c;
 }
 
 .form-top {
@@ -195,12 +210,8 @@
   font-size: 1.8vw;
   margin-top: 3vw;
 }
-.success {
-  opacity: 1;
-  color: #03010e;
-}
+
 .failure {
-  opacity: 1;
   color: #ff0000;
 }
 
@@ -208,7 +219,6 @@
   .contact-container {
     flex-direction: column;
     height: auto;
-    padding-bottom: 15vw;
   }
 
   .contact-title-container {
@@ -222,9 +232,14 @@
     height: 30vw;
   }
 
-  .form {
+  .form-container {
     width: 100%;
-    margin: 0;
+    margin-left: 0;
+  }
+
+  .recaptcha-terms {
+    margin: 10vw 10vw 5vw;
+    font-size: 2.16vw;
   }
 
   .contact-title {

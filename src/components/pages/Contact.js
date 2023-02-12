@@ -9,7 +9,6 @@ import ContactForm from '../ContactForm';
 
 export default function Contact() {
   useScrollToTop();
-  const key = process.env.RECAPTCHA_SITE_KEY;
 
   useEffect(() => {
     // fix flashing animated titles on page load
@@ -35,9 +34,15 @@ export default function Contact() {
             <h1 className='contact-title'>TOUCH</h1>
           </div>
         </div>
-        <GoogleReCaptchaProvider reCaptchaKey='6Lehp3EkAAAAAAU9loty8qyGtnwYRiJOhmNtkyh3' useEnterprise>
-          <ContactForm />
-        </GoogleReCaptchaProvider>
+        <div className='form-container'>
+          <GoogleReCaptchaProvider reCaptchaKey={process.env.REACT_APP_RECAPTCHA_SITE_KEY} useEnterprise useRecaptchaNet>
+            <ContactForm />
+          </GoogleReCaptchaProvider>
+          <p className='recaptcha-terms'>
+            This site is protected by reCAPTCHA and the Google <a href='https://policies.google.com/privacy'>Privacy Policy</a> and{' '}
+            <a href='https://policies.google.com/terms'>Terms of Service</a> apply.
+          </p>
+        </div>
       </div>
       <Footer />
       <EntryTransition />

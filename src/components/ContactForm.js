@@ -1,5 +1,5 @@
 import '../styles/Contact.css';
-import { useRef } from 'react';
+import { useState } from 'react';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
@@ -14,15 +14,16 @@ const formSchema = z.object({
 });
 
 export default function ContactForm() {
-  const form = useRef();
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isFailed, setIsFailed] = useState(false);
   const { executeRecaptcha } = useGoogleReCaptcha();
 
   const {
-    register,
-    handleSubmit,
     reset,
+    register,
     clearErrors,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
+    handleSubmit,
+    formState: { errors, isSubmitting },
   } = useForm({
     reValidateMode: 'onSubmit',
     resolver: zodResolver(formSchema),
@@ -34,9 +35,10 @@ export default function ContactForm() {
 
   const onSubmit = async (data) => {
     try {
+      setIsSuccess(false);
+      setIsFailed(false);
       const token = await executeRecaptcha('submitForm');
-      console.log(data, token);
-      const res = await fetch('http://localhost:3000/api/contact-form', {
+      const res = await fetch(process.env.REACT_APP_NEXT_API_NODEMAILER_URL, {
         method: 'post',
         headers: {
           'Content-Type': 'application/json',
@@ -46,12 +48,18 @@ export default function ContactForm() {
           recaptchaToken: token,
         }),
       });
-      console.log(res);
-    } catch (err) {}
+
+      if (res.status !== 200) throw new Error('submission failed');
+
+      reset();
+      setIsSuccess(true);
+    } catch (err) {
+      setIsFailed(true);
+    }
   };
 
   return (
-    <form className='form' ref={form} onSubmit={handleSubmit(onSubmit)}>
+    <form className='form' onSubmit={handleSubmit(onSubmit)}>
       <div className='form-top'>
         <div className='form-top-left'>
           <div className='input-field-wrapper'>
@@ -82,7 +90,8 @@ export default function ContactForm() {
           </div>
         )}
       </button>
-      <p className='status-msg'>Thank you for your message.</p>
+      {isSuccess && <p className='status-msg'>Thank you for your message.</p>}
+      {isFailed && <p className='status-msg failure'>Failed to send, please try again later.</p>}
     </form>
   );
 }
