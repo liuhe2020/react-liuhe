@@ -6,7 +6,7 @@ export default function HeroSection() {
   useEffect(() => {
     //intro animation
     gsap.from('.intro span', {
-      y: 480,
+      y: 480, //13vw
       duration: 2,
       ease: 'power4.out',
       delay: 0.6,

@@ -1,11 +1,9 @@
 import { useEffect } from 'react';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import gsap from 'gsap';
-import '../../styles/Contact.css';
-import Footer from '../Footer';
-import { EntryTransition, PageTransition } from '../PageTransition';
-import useScrollToTop from '../../utils/useScrollToTop';
-import ContactForm from '../ContactForm';
+import '../styles/Contact.css';
+import { Footer, ContactForm, EntryTransition, PageTransition } from '../components';
+import useScrollToTop from '../utils/useScrollToTop';
 
 export default function Contact() {
   useScrollToTop();
@@ -16,7 +14,7 @@ export default function Contact() {
 
     // gsap opening animation on page load
     gsap.from('.contact-title', {
-      y: 350,
+      y: 350, //19vw
       ease: 'power4.out',
       duration: 2,
       delay: 0.6,

@@ -1,10 +1,11 @@
-import React, { useEffect, useRef } from 'react';
-import '../styles/CardItem.css';
+import { useEffect, useRef } from 'react';
+import '../styles/Project.css';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 gsap.registerPlugin(ScrollTrigger);
 
-export default function CardItem(props) {
+export default function Project(props) {
   const projectLink = useRef(null);
   const gitLink = useRef(null);
   const img = useRef(null);

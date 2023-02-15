@@ -1,5 +1,5 @@
-import '../styles/Cards.css';
-import CardItem from './CardItem';
+import '../styles/Projects.css';
+import Project from './Project';
 
 const projects = [
   {
@@ -39,14 +39,14 @@ const projects = [
   },
 ];
 
-export default function Cards() {
+export default function Projects() {
   return (
     <div className='projects' id='projects'>
       <div className='project-title-container'>
         <h2>PROJECTS</h2>
       </div>
       {projects.map(({ title, text, src, url, gitUrl }) => (
-        <CardItem key={title} title={title} text={text} src={src} url={url} gitUrl={gitUrl} />
+        <Project key={title} title={title} text={text} src={src} url={url} gitUrl={gitUrl} />
       ))}
     </div>
   );
