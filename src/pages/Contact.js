@@ -14,7 +14,7 @@ export default function Contact() {
 
     // gsap opening animation on page load
     gsap.from('.contact-title', {
-      y: 350, //19vw
+      y: 460,
       ease: 'power4.out',
       duration: 2,
       delay: 0.6,

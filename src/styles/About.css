@@ -5,6 +5,7 @@
 .top-container {
   width: 100%;
   height: 100vh;
+  min-height: 60vw;
   position: relative;
   overflow: hidden;
   visibility: hidden;
@@ -142,18 +143,18 @@
   }
 
   .title1 {
-    font-size: 3.5rem;
-    line-height: 3.8rem;
+    font-size: 3.3rem;
+    line-height: 3.5rem;
   }
 
   .title2 {
-    font-size: 3rem;
-    line-height: 3.8rem;
+    font-size: 2.8rem;
+    line-height: 3.5rem;
   }
 
   .title3 {
-    font-size: 2.5rem;
-    line-height: 3rem;
+    font-size: 2.3rem;
+    line-height: 2.6rem;
   }
 
   .about-img1 {

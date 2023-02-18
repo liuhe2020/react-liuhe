@@ -48,7 +48,7 @@ export default function About() {
 
     // gsap opening animation on page load
     gsap.from('.about-titles h1', {
-      y: 480, //18vw
+      y: 700,
       ease: 'power4.out',
       duration: 2,
       delay: 0.6,
