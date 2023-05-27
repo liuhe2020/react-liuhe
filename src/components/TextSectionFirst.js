@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import '../styles/Banner.css';
+import '../styles/TextSectionFirst.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Banner() {
+export default function TextSectionFirst() {
   useEffect(() => {
     //slogan slide up animation
     gsap.from('.slogan1', {
@@ -47,7 +47,7 @@ export default function Banner() {
 
     //text fade in animation
     gsap.fromTo(
-      '.banner-text',
+      '.TSF-text',
       {
         autoAlpha: 0,
         y: '15vh',
@@ -58,7 +58,7 @@ export default function Banner() {
         y: 0,
         ease: 'power4.out',
         scrollTrigger: {
-          trigger: '.banner-text',
+          trigger: '.TSF-text',
           start: 'top 80%',
         },
       }
@@ -66,7 +66,7 @@ export default function Banner() {
   }, []);
 
   return (
-    <div className='banner'>
+    <div className='TSF'>
       <div className='slogan'>
         <div className='slogan-container'>
           <h1 className='slogan1'>TURN</h1>
@@ -80,7 +80,7 @@ export default function Banner() {
         <div className='slogan-container'>
           <h1 className='slogan4'>PERFORMANCE</h1>
         </div>
-        <h2 className='banner-text'>
+        <h2 className='TSF-text'>
           I strive to create beautiful looking and interactive websites by merging imagination and technology to help your business accelerate its digital
           transformation. The goal isn't to build a website. The goal is to build your business.
         </h2>

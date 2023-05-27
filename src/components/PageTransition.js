@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const EntryTransition = () => {
+export const EntryTransition = () => {
   const pageVariants = {
     start: { y: 0 },
     in: {
@@ -13,12 +13,10 @@ const EntryTransition = () => {
 };
 
 // page transition wrapper, set transition in from invis to vis to avoid flashes from component mounting. fade out on exit
-const PageTransition = ({ children }) => {
+export default function PageTransition({ children }) {
   return (
     <motion.div className='page' initial={{ visibility: 'hidden' }} animate={{ visibility: 'visible' }} exit={{ opacity: 0, transition: { duration: 1 } }}>
       {children}
     </motion.div>
   );
-};
-
-export { EntryTransition, PageTransition };
+}

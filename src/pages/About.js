@@ -1,10 +1,9 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import '../../styles/About.css';
-import Footer from '../Footer';
-import { EntryTransition, PageTransition } from '../PageTransition';
-import useScrollToTop from '../../utils/useScrollToTop';
+import '../styles/About.css';
+import { Footer, EntryTransition, PageTransition } from '../components';
+import useScrollToTop from '../utils/useScrollToTop';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -49,7 +48,7 @@ export default function About() {
 
     // gsap opening animation on page load
     gsap.from('.about-titles h1', {
-      y: 480,
+      y: 700,
       ease: 'power4.out',
       duration: 2,
       delay: 0.6,

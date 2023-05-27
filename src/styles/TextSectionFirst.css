@@ -1,4 +1,4 @@
-.banner {
+.TSF {
   background: #fff;
 }
 
@@ -20,7 +20,7 @@
   line-height: 11vw;
 }
 
-.banner-text {
+.TSF-text {
   color: #03010e;
   font-size: 2vw;
   line-height: 2.2vw;
@@ -33,7 +33,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .banner-text {
+  .TSF-text {
     font-size: 3vw;
     line-height: 3.5vw;
   }
@@ -44,7 +44,7 @@
     padding: 15vw 11vw;
   }
 
-  .banner-text {
+  .TSF-text {
     font-size: 4.5vw;
     line-height: 5vw;
   }
