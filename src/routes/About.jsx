@@ -32,7 +32,7 @@ const aboutMe = [
 ];
 
 export default function About() {
-  useScrollToTop();
+  // useScrollToTop();
   // refs array for gsap fade in
   const fadeInRefs = useRef([]);
   fadeInRefs.current = [];

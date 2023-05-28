@@ -2,7 +2,7 @@ import { HeroSection, TextSectionFirst, Projects, TextSectionSecond, Toolbox, Fo
 import useScrollToTop from '../utils/useScrollToTop';
 
 export default function Home() {
-  useScrollToTop();
+  // useScrollToTop();
 
   return (
     <PageTransition>
