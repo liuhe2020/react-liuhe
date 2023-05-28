@@ -69,23 +69,19 @@ export default function Project(props) {
         duration: 1.2,
         ease: 'power2.easeInOut',
       }
-    ).fromTo(
-      overlay,
-      { width: '100%' },
-      {
-        width: '0%',
-        duration: 1.5,
-        ease: 'power2.easeInOut',
-        delay: -1.2,
-      }
-    );
+    ).to(overlay, {
+      width: '0%',
+      duration: 1.5,
+      ease: 'power2.easeInOut',
+      delay: -1.2,
+    });
 
     // project description text fade in animation
     gsap.fromTo(
       projectInfo.current,
       {
         autoAlpha: 0,
-        y: '15vh',
+        y: '5vh',
       },
       {
         duration: 1,

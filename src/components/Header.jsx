@@ -10,8 +10,7 @@ import '../styles/Header.css';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
-  const param = useParams();
+  const { pathname } = useLocation();
   const viewportWidth = useViewport();
 
   const handleHomeScroll = () => {
@@ -67,7 +66,7 @@ export default function Header() {
   // set menu to close after navigation based on listening to route change
   useEffect(() => {
     setIsMenuOpen(false);
-  }, [location]);
+  }, [pathname]);
 
   return (
     <>
