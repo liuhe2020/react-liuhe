@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useLocation, useParams, Link } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { RemoveScroll } from 'react-remove-scroll';
 import { GiHamburgerMenu } from 'react-icons/gi';

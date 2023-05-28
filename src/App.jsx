@@ -1,3 +1,4 @@
+// framer motion with react router v6 https://www.framer.com/motion/examples/#react-router-6-page-transitions
 import './index.css';
 import React, { useEffect } from 'react';
 import { useLocation, useRoutes } from 'react-router-dom';
