@@ -13,6 +13,7 @@ export { default as js } from './js.png';
 export { default as logo } from './liu_he_logo.png';
 export { default as logoSmall } from './liu_he.png';
 export { default as next } from './next.png';
+export { default as ts } from './ts.png';
 export { default as node } from './node.png';
 export { default as react } from './react.png';
 export { default as sass } from './sass.png';

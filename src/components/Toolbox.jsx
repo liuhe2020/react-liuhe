@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useIntersection } from 'react-use';
 import '../styles/Toolbox.css';
-import { html, css, js, node, react, next, sass, tailwind } from '../assets/images';
+import { html, css, js, node, react, next, ts, sass, tailwind } from '../assets/images';
 
 const toolbox = [
   {
@@ -15,6 +15,7 @@ const toolbox = [
   { src: node, alt: 'nodejs' },
   { src: react, alt: 'reactjs' },
   { src: next, alt: 'nextjs' },
+  { src: ts, alt: 'typescript' },
   { src: sass, alt: 'sass' },
   { src: tailwind, alt: 'tailwind' },
 ];

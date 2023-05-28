@@ -2,14 +2,17 @@ import './index.css';
 import { RouterProvider } from 'react-router-dom';
 import { Home, About, Contact } from './routes';
 import { createBrowserRouter, Outlet } from 'react-router-dom';
-import { Header, Footer } from './components';
+import { Header, Nav } from './components';
+import { AnimatePresence } from 'framer-motion';
 
 const Layout = () => {
   return (
     <>
       <Header />
-      <Outlet />
-      <Footer />
+      <Nav />
+      <AnimatePresence>
+        <Outlet />
+      </AnimatePresence>
     </>
   );
 };
