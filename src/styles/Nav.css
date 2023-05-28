@@ -24,7 +24,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1vw;
+  padding: 0 0.2vw;
 }
 
 .nav-btm h5 {
@@ -48,12 +48,12 @@
 
 .social {
   display: flex;
+  gap: 1rem;
 }
 
 .social .fab {
   color: #ffffec;
   font-size: 1.5rem;
-  margin-left: 1rem;
 }
 
 .nav a:after {
@@ -65,9 +65,6 @@
   transition: width 0.4s ease;
 }
 
-.social a:after {
-  margin-left: 0.5rem;
-}
 .nav a:hover:after {
   width: 100%;
 }
@@ -97,9 +94,12 @@
     font-size: 3.5vw;
   }
 
+  .social {
+    gap: 1vw;
+  }
+
   .social .fab {
     font-size: 1.5vw;
-    margin-left: 1vw;
   }
 }
 

@@ -38,7 +38,7 @@ export default function ContactForm() {
       setIsSuccess(false);
       setIsFailed(false);
       const token = await executeRecaptcha('submitForm');
-      const res = await fetch(process.env.REACT_APP_NEXT_API_NODEMAILER_URL, {
+      const res = await fetch(import.meta.env.VITE_NEXT_API_NODEMAILER_URL, {
         method: 'post',
         headers: {
           'Content-Type': 'application/json',

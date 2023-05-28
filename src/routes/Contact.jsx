@@ -5,8 +5,6 @@ import '../styles/Contact.css';
 import { Footer, ContactForm, EntryTransition, PageTransition } from '../components';
 import useScrollToTop from '../utils/useScrollToTop';
 
-const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
-
 export default function Contact() {
   useScrollToTop();
 
@@ -35,7 +33,7 @@ export default function Contact() {
           </div>
         </div>
         <div className='form-container'>
-          <GoogleReCaptchaProvider reCaptchaKey={siteKey} useEnterprise useRecaptchaNet>
+          <GoogleReCaptchaProvider reCaptchaKey={import.meta.env.VITE_RECAPTCHA_SITE_KEY} useEnterprise useRecaptchaNet>
             <ContactForm />
           </GoogleReCaptchaProvider>
           <p className='recaptcha-terms'>
