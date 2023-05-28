@@ -2,8 +2,7 @@ import { useEffect, useRef } from 'react';
 import '../styles/Project.css';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import arrowLeft from '../assets/images/arrow_left.png';
-import arrowRight from '../assets/images/arrow_right.png';
+import { arrowLeft, arrowRight } from '../assets/images';
 
 gsap.registerPlugin(ScrollTrigger);
 

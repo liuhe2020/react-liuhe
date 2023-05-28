@@ -3,19 +3,20 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useIntersection } from 'react-use';
 import '../styles/Toolbox.css';
+import { html, css, js, node, react, next, sass, tailwind } from '../assets/images';
 
 const toolbox = [
   {
-    src: '/img/html.png',
+    src: html,
     alt: 'html',
   },
-  { src: '/img/css.png', alt: 'css' },
-  { src: '/img/js.png', alt: 'javascript' },
-  { src: '/img/node.png', alt: 'nodejs' },
-  { src: '/img/react.png', alt: 'reactjs' },
-  { src: '/img/next.png', alt: 'nextjs' },
-  { src: '/img/sass.png', alt: 'sass' },
-  { src: '/img/tailwind.png', alt: 'tailwind' },
+  { src: css, alt: 'css' },
+  { src: js, alt: 'javascript' },
+  { src: node, alt: 'nodejs' },
+  { src: react, alt: 'reactjs' },
+  { src: next, alt: 'nextjs' },
+  { src: sass, alt: 'sass' },
+  { src: tailwind, alt: 'tailwind' },
 ];
 
 gsap.registerPlugin(ScrollTrigger);

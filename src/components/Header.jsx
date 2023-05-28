@@ -1,15 +1,17 @@
 // import { useState, useEffect } from 'react';
-// import { withRouter, useLocation, Link } from 'react-router-dom';
+// import { useLocation, useParams, Link } from 'react-router-dom';
 // import gsap from 'gsap';
 // import { RemoveScroll } from 'react-remove-scroll';
 // import { GiHamburgerMenu } from 'react-icons/gi';
 // import { FaRegArrowAltCircleUp } from 'react-icons/fa';
 // import useViewport from '../utils/useViewport';
+// import { logo } from '../assets/images';
 // import '../styles/Header.css';
 
-// const Header = ({ history }) => {
+// export default function Header() {
 //   const [isMenuOpen, setIsMenuOpen] = useState(false);
-//   const { pathname } = useLocation();
+//   const location = useLocation();
+//   const param = useParams();
 //   const viewportWidth = useViewport();
 
 //   const handleHomeScroll = () => {
@@ -41,9 +43,9 @@
 //     };
 
 //     // set menu to close after navigation based on listening to route change
-//     history.listen(() => {
+//     useEffect(() => {
 //       setIsMenuOpen(false);
-//     });
+//     }, [location]);
 
 //     // navbar is hidden on top of the window and slides down 320px or 20vw (based on viewport) when toggled
 //     // the rest of the page (.page class) slides down at the same time
@@ -72,7 +74,7 @@
 //       <div className='header'>
 //         <div className='header-container'>
 //           <Link to='/' className='logo' onClick={handleHomeScroll}>
-//             <img src='/svg/liu_he_logo.png' alt='liu_he_logo' />
+//             <img src={logo} alt='liu_he_logo' />
 //           </Link>
 //           <GiHamburgerMenu className='nav-toggle' onClick={() => setIsMenuOpen(true)} />
 //           <FaRegArrowAltCircleUp className='nav-close' onClick={() => setIsMenuOpen(false)} />
@@ -82,9 +84,7 @@
 //       {isMenuOpen && <RemoveScroll removeScrollBar={false} />}
 //     </>
 //   );
-// };
-
-// export default withRouter(Header);
+// }
 
 import React from 'react';
 
