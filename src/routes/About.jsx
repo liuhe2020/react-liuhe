@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import '../styles/About.css';
 import { Footer, EntryTransition, PageTransition } from '../components';
 import useScrollToTop from '../utils/useScrollToTop';
+import { dog, liuHe } from '../assets/images';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -88,8 +89,8 @@ export default function About() {
             <h1 className='title2'>PHOTOGRAPHER</h1>
             <h1 className='title3'>DOG LOVER</h1>
           </div>
-          <img className='about-img1' src='/img/liuhe.png' alt='liu_he' />
-          <img className='about-img2' src='/img/archie3.png' alt='pomeranian' />
+          <img className='about-img1' src={liuHe} alt='liu_he' />
+          <img className='about-img2' src={dog} alt='pomeranian' />
         </div>
         <div className='btm-container'>
           {aboutMe.map(({ title, text }) => {
