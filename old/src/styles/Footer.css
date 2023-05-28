@@ -1,0 +1,166 @@
+.footer {
+  background: #03010e;
+  padding: 4rem 11vw;
+  color: #ffffec;
+}
+
+.footer-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer-text {
+  font-weight: 600;
+  font-size: 5rem;
+}
+
+.footer-logo {
+  display: block;
+  width: 6.25rem;
+}
+
+.footer-logo img {
+  max-width: 100%;
+  height: auto;
+  mix-blend-mode: difference;
+}
+
+.footer-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  list-style: none;
+  text-align: end;
+  z-index: 1;
+  transform: translateY(0.5rem);
+  gap: 1.5rem;
+}
+
+.footer-list a {
+  text-decoration: none;
+  color: #ffffec;
+}
+
+.footer-list-item a {
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.contact-info {
+  display: none;
+}
+
+@media screen and (min-width: 1920px) {
+  .footer {
+    padding: 4vw 11vw;
+  }
+
+  .footer-container {
+    height: 10vw;
+  }
+
+  .footer-text {
+    font-size: 5vw;
+  }
+
+  .footer-logo {
+    width: 6vw;
+  }
+
+  .footer-list {
+    transform: translateY(0.5vw);
+  }
+
+  .footer-list-item a {
+    font-size: 2vw;
+  }
+
+  .copyright {
+    font-size: 1.2vw;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .footer-text {
+    font-size: 4.2rem;
+  }
+
+  .footer-list {
+    transform: translateY(0.4rem);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .footer-logo {
+    display: none;
+  }
+
+  .footer-text {
+    font-size: 3.2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .footer-list {
+    text-align: center;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-info {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .contact-info h5 {
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+
+  .contact-info a {
+    text-decoration: none;
+    color: #ffffec;
+    font-size: 1.2rem;
+  }
+
+  .copyright {
+    position: static;
+    align-self: center;
+    transform: translateY(0);
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .contact-email,
+  .contact-phone {
+    text-align: center;
+  }
+}
