@@ -3,6 +3,7 @@ export { default as pinMyMap } from './pin_my_map.jpg';
 export { default as nameBrand } from './name_brand.jpg';
 export { default as yaak } from './yaak.jpg';
 export { default as liuRiverPhotography } from './liu_river_photography.jpg';
+export { default as nsds } from './nsds.jpg';
 export { default as dog } from './archie3.png';
 export { default as liuHe } from './liuhe.png';
 export { default as arrowLeft } from './arrow_left.png';
