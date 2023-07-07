@@ -10,12 +10,12 @@ import '../styles/Header.css';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { pathname } = useLocation();
+  const location = useLocation();
   const viewportWidth = useViewport();
 
   const handleHomeScroll = () => {
     // smooth scroll to top if already on home page
-    if (pathname === '/') {
+    if (location.pathname === '/') {
       window.scrollTo({
         top: 0,
         left: 0,
@@ -66,7 +66,7 @@ export default function Header() {
   // set menu to close after navigation based on listening to route change
   useEffect(() => {
     setIsMenuOpen(false);
-  }, [pathname]);
+  }, [location]);
 
   return (
     <>
