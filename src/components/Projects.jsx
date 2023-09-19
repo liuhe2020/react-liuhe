@@ -42,7 +42,7 @@ const projects = [
     title: 'LIU RIVER PHOTOGRAPHY',
     text: "A photographer's website built using HTML, CSS and vanilla JavaScript with features including custom built gallery lightbox and client side form validation.",
     src: liuRiverPhotography,
-    url: 'https://www.liuriver.co.uk',
+    url: 'https://www.liuriver.com',
     gitUrl: 'https://github.com/liuhe2020/liuriver',
   },
 ];
