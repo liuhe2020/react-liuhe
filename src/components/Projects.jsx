@@ -5,7 +5,7 @@ import { nsds, pinMyMap, bingedIn, liuRiverPhotography, yaak, nameBrand } from '
 const projects = [
   {
     title: 'NEXT SANITY DEMO STORE',
-    text: 'Next Sanity Demo Store is an example ecommerce store website built on Next.js 13 with the app router. Pages and components are server side rendered wherever possible. It is coupled with Sanity headless CMS to handle all the data. Paypal integration for payments with server side verification for orders and payments in Next API routes.',
+    text: 'Next Sanity Demo Store is an example ecommerce store website built on Next.JS 13 with the app router. Pages and components are server side rendered wherever possible. It is coupled with Sanity headless CMS to handle all the data. Paypal integration for payments with server side verification for orders and payments in Next API routes.',
     src: nsds,
     url: 'https://nsds.vercel.app',
     gitUrl: 'https://github.com/liuhe2020/next-sanity-demo-store',
