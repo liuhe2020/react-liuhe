@@ -15,7 +15,7 @@ const aboutMe = [
   },
   {
     title: 'Where am I?',
-    text: 'I was born and raised in southern China. In 2003, I moved to London, UK and now I live in Exeter, Devon.',
+    text: 'I was born and raised in southern China. In 2003, I moved to London. I have lived and worked in London, Sheffield and Exeter. Currently, I reside in Essex.',
   },
   {
     title: 'Why web development?',
