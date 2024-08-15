@@ -1,8 +1,15 @@
 import '../styles/Projects.css';
 import Project from './Project';
-import { nsds, pinMyMap, bingedIn, liuRiverPhotography, yaak, nameBrand } from '../assets/images';
+import { daddysGotJokes, nsds, pinMyMap, bingedIn, liuRiverPhotography, yaak, nameBrand } from '../assets/images';
 
 const projects = [
+  {
+    title: `DADDY'S GOT JOKES`,
+    text: `Daddy's Got Jokes is a REST API service built using Go that offers a simple and efficient way to fetch jokes. Designed for high performance, the API is well-suited for small applications at this stage due to the limitations of the underlying VPS. Future scalability will depend on infrastructure upgrades, but for now, it provides a reliable solution for projects with low traffic.`,
+    src: daddysGotJokes,
+    url: 'https://www.daddysgotjokes.com',
+    gitUrl: 'https://github.com/liuhe2020/daddys-got-jokes',
+  },
   {
     title: 'NEXT SANITY DEMO STORE',
     text: 'Next Sanity Demo Store is an example ecommerce store website built on Next.JS 13 with the app router. Pages and components are server side rendered wherever possible. It is coupled with Sanity headless CMS to handle all the data. Paypal integration for payments with server side verification for orders and payments in Next API routes.',
@@ -32,18 +39,18 @@ const projects = [
     gitUrl: 'https://github.com/liuhe2020/react-bingedin',
   },
   {
-    title: 'YAAK CHATROOM',
-    text: 'Yaak chatroom is an online chat app with multi-rooms support. Users can log in with Google or Facebook and chat to one another. It also supports emojis. Yaak was built with HTML, SASS and vanilla JavaScript, utilising Firebase for data storage and user authentication.',
-    src: yaak,
-    url: 'https://yaak-aa6a6.web.app',
-    gitUrl: 'https://github.com/liuhe2020/yaak',
-  },
-  {
     title: 'LIU RIVER PHOTOGRAPHY',
     text: "A photographer's website built using HTML, CSS and vanilla JavaScript with features including custom built gallery lightbox and client side form validation.",
     src: liuRiverPhotography,
     url: 'https://www.liuriver.com',
     gitUrl: 'https://github.com/liuhe2020/liuriver',
+  },
+  {
+    title: 'YAAK CHATROOM',
+    text: 'Yaak chatroom is an online chat app with multi-rooms support. Users can log in with Google or Facebook and chat to one another. It also supports emojis. Yaak was built with HTML, SASS and vanilla JavaScript, utilising Firebase for data storage and user authentication.',
+    src: yaak,
+    url: 'https://yaak-aa6a6.web.app',
+    gitUrl: 'https://github.com/liuhe2020/yaak',
   },
 ];
 

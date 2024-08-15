@@ -21,7 +21,7 @@ export default function HeroSection() {
       <video src={bg} autoPlay loop muted />
       <div className='intro'>
         <span className='intro-top'>Hi, I'm Liu.</span>
-        <span className='intro-btm'>Building custom websites for businesses is what I do.</span>
+        <span className='intro-btm'>Building custom web solutions for businesses is what I do.</span>
       </div>
     </div>
   );

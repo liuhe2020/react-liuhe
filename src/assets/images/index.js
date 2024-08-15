@@ -1,3 +1,4 @@
+export { default as daddysGotJokes } from './daddys_got_jokes.jpg';
 export { default as bingedIn } from './bingedin.jpg';
 export { default as pinMyMap } from './pin_my_map.jpg';
 export { default as nameBrand } from './name_brand.jpg';
