@@ -1,6 +1,6 @@
 import '../styles/Projects.css';
 import Project from './Project';
-import { nsds, pinMyMap, bingedIn, liuRiverPhotography, yaak, nameBrand } from '../assets/images';
+import { daddysGotJokes, nsds, pinMyMap, bingedIn, liuRiverPhotography, yaak, nameBrand } from '../assets/images';
 
 const projects = [
   {
