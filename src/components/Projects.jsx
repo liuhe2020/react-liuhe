@@ -7,7 +7,7 @@ const projects = [
     title: `DADDY'S GOT JOKES`,
     text: `Daddy's Got Jokes is a REST API service built using Go that offers a simple and efficient way to fetch jokes. Designed for high performance, the API is well-suited for small applications at this stage due to the limitations of the underlying VPS. Future scalability will depend on infrastructure upgrades, but for now, it provides a reliable solution for projects with low traffic.`,
     src: daddysGotJokes,
-    url: 'https://www.daddysgotjokes.com',
+    url: 'https://daddysgotjokes.liuhe.dev',
     gitUrl: 'https://github.com/liuhe2020/daddys-got-jokes',
   },
   {
